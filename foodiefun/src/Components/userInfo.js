@@ -1,23 +1,22 @@
 import React from 'react';
-import userCard from './userCard';
+import UserCard from './UserCard';
 
-export default function userInfo() {
+export default function userInfo({data}) {
 
-    if (! dataname){
+
+    if (! data){
         return <div>Loading Foodie Cards...</div>
     }
 
     else{
         return <section className = 'userCard gridview'>
-            <h2>
+            <div>
                 {/* oneRest is the data for only one restuarant */}
-                {dataname.map((oneRest) =>
-                    <UserCard tiledata = {oneRest}/>
+                {data.map((oneRest) =>
+                    <UserCard tileData = {oneRest}/>
                 )}
 
-
-
-            </h2>
+            </div>
         </section>
     }
 }
