@@ -11,6 +11,9 @@ export default function userInfo({data}) {
     else{
         return <section className = 'userCard gridview'>
             <div>
+                <div>
+                   Insert search tabs here
+                </div>
                 {/* oneRest is the data for only one restuarant */}
                 {data.map((oneRest) =>
                     <UserCard tileData = {oneRest}/>
