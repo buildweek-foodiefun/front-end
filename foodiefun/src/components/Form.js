@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import './FormStyles.css';
 
 
-
 function Form() {
     const [restaurant, setRestaurant] = useState({});
     
@@ -41,11 +40,7 @@ function Form() {
           <textarea type="text" className="form-control" placeholder="Enter Comments"
           rows="6" cols="33"></textarea>
           </div>
-          {/* <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Comments"
-          /> */}
+          
         </div>
         <div className="form-group">
           <label for="waitTime">Wait Time</label>
@@ -90,6 +85,9 @@ function Form() {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        <div>
+    
+  </div>
       </fieldset>
     </form>
     )
