@@ -10,7 +10,11 @@ function Form() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        setRestaurant({menuItem: '', 
+        console.log(restaurant);
+        setRestaurant({
+                        restaurantName: '',
+                        restaurantType: '',
+                        menuItem: '', 
                         comments: '', 
                         waitTime: '', 
                         photoOfOrder: '', 
@@ -23,6 +27,36 @@ function Form() {
     <form onSubmit={handleSubmit}>
       <fieldset>
         <legend>Signup</legend>
+        <div className="form-group row">
+          <label for="Restaurant Name" className="col-sm-2 col-form-label">
+            Restaurant Name
+          </label>
+          <div className="col-sm-10">
+            <input
+              type="text"
+              value={restaurant.restaurantName}
+              name='restaurantName'
+              className="form-control"
+              id="restaurantName"
+              onChange={handleChange} 
+            />
+          </div>
+        </div>
+        <div className="form-group row">
+          <label for="Restaurant Type" className="col-sm-2 col-form-label">
+            Restaurant Type
+          </label>
+          <div className="col-sm-10">
+            <input
+              type="text"
+              value={restaurant.restaurantType}
+              name='restaurantType'
+              className="form-control"
+              id="restaurantType"
+              onChange={handleChange} 
+            />
+          </div>
+        </div>
         <div className="form-group row">
           <label for="menuItem" className="col-sm-2 col-form-label">
             Menu Item
@@ -98,7 +132,7 @@ function Form() {
           <input
             type="date"
             value={restaurant.dateOfVisit}
-            name='date'
+            name='dateOfVisit'
             className="form-control"
             placeholder="Date of Visit"
             onChange={handleChange} 
