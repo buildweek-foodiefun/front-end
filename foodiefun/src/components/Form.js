@@ -2,7 +2,16 @@ import React, {useState, useEffect} from 'react';
 import './FormStyles.css';
 
 function Form() {
-    const [restaurant, setRestaurant] = useState({});
+    const [restaurant, setRestaurant] = useState({
+                                                restaurantName: '',
+                                                restaurantType: '',
+                                                menuItem: '', 
+                                                comments: '', 
+                                                waitTime: '', 
+                                                photoOfOrder: '', 
+                                                price: '', 
+                                                rate: '', 
+                                                dateOfVisit: ''});
     
     const handleChange = event => {
         setRestaurant({...restaurant, [event.target.name]: event.target.value})
@@ -19,14 +28,14 @@ function Form() {
                         waitTime: '', 
                         photoOfOrder: '', 
                         price: '', 
-                        foodRating: '', 
+                        rate: '', 
                         dateOfVisit: ''})
     }
 
     return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Signup</legend>
+        <legend>Rate the Food</legend>
         <div className="form-group row">
           <label for="Restaurant Name" className="col-sm-2 col-form-label">
             Restaurant Name
@@ -64,7 +73,7 @@ function Form() {
           <div className="col-sm-10">
             <input
               type="text"
-              value={restaurant.MenuItem}
+              value={restaurant.menuItem}
               name='menuItem'
               className="form-control"
               id="menuItem"
@@ -92,6 +101,7 @@ function Form() {
             className="form-control"
             placeholder="Wait Time"
             onChange={handleChange}
+            required
           />
         </div>
         <div className="form-group">
