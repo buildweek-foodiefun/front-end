@@ -12,7 +12,6 @@ function Form() {
                         photoOfOrder: '', 
                         price: '', 
                         foodRating: '',
-                        waitTime: '', 
                         dateOfVisit: ''})
     }, []);
     
@@ -21,36 +20,64 @@ function Form() {
     <form>
       <fieldset>
         <legend>Signup</legend>
-        {console.log(restaurant)}
         <div className="form-group row">
-          <label for="username" className="col-sm-2 col-form-label">
-            Username
+          <label for="menuItem" className="col-sm-2 col-form-label">
+            Menu Item
           </label>
           <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
-              id="username"
+              id="menuItem"
             />
           </div>
         </div>
         <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+          <label for="comments">Comments</label>
           <input
-            type="email"
+            type="text"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
+            placeholder="Enter Comments"
           />
         </div>
         <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
+          <label for="waitTime">Wait Time</label>
           <input
-            type="password"
+            type="time"
             className="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
+            placeholder="Wait Time"
+          />
+        </div>
+        <div className="form-group">
+          <label for="photoOfOrder">Wait Time</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="photo of order"
+          />
+        </div>
+        <div className="form-group">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder="Price"
+          />
+        </div>
+        <div className="form-group">
+          <label for="foodRating">Rate the food</label>
+          <input
+            type="number"
+            className="form-control"
+            placeholder="Rate the Food"
+          />
+        </div>
+        <div className="form-group">
+          <label for="dateOfVisit">Date of Visit</label>
+          <input
+            type="date"
+            className="form-control"
+            placeholder="Date of Visit"
           />
         </div>
         <button type="submit" className="btn btn-primary">
