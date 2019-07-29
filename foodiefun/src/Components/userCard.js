@@ -4,7 +4,7 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 function UserCard (props){
   console.log("cardprops", props)
 
-   return(
+  return(
 
     <Card>
       <Image className= 'photoOfOrder' src={props.tileData.photoOfOrder} wrapped ui={false} />
@@ -15,31 +15,31 @@ function UserCard (props){
         </Card.Header>
 
         <Card.Meta>
-          <span className='dateOfVisit'>{props.tileData.dateOfVisit}</span>
+          <span className='dateOfVisit'>Date Visited:  {props.tileData.dateOfVisit}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='restaurantType'>{props.tileData.restaurantType}</span>
+          <span className='restaurantType'>Type of Food: {props.tileData.restaurantType}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='waitTime'>{props.tileData.waitTime}</span>
+          <span className='waitTime'> Wait Time: {props.tileData.waitTime} minutes</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='menuItem'>{props.tileData.menuItem}</span>
+          <span className='menuItem'>Item Ordered: {props.tileData.menuItem}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='price'>{props.tileData.price}</span>
+          <span className='price'> Price: {props.tileData.price}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='foodRating'>{props.tileData.foodRating}</span>
+          <span className='foodRating'>Food rating: {props.tileData.foodRating} Stars</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='comments'>{props.tileData.comments}</span>
+          <span className='comments'>Comments: {props.tileData.comments}</span>
         </Card.Meta>
 
       </Card.Content>

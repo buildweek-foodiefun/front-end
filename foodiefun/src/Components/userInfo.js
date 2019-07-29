@@ -4,7 +4,7 @@ import UserCard from './UserCard';
 export default function userInfo({data}) {
 
 
-    if (! data){
+    if (!data){
         return <div>Loading Foodie Cards...</div>
     }
 
