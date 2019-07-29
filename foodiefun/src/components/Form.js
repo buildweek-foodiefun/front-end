@@ -84,6 +84,16 @@ function Form({addReview}) {
         </div>
         <div className="form-group">
           <label for="comments">Comments</label>
+          <div>
+          <textarea 
+             type="text"
+             value={restaurant.comments}
+             name='comments'
+             className="form-control"
+             placeholder="Enter Comments"
+             onChange={handleChange}
+          rows="6" cols="33"></textarea>
+          </div>
           <input
             type="text"
             value={restaurant.comments}
@@ -128,7 +138,7 @@ function Form({addReview}) {
           />
         </div>
         <div className="form-group">
-          <label for="foodRating">Rate the food</label>
+          <label for="foodRating">Rate the food: 1-worst 5-best</label>
           <input
             type="number"
             value={restaurant.rate}
@@ -149,6 +159,7 @@ function Form({addReview}) {
             onChange={handleChange} 
           />
         </div>
+        
         <button type="submit" className="btn btn-primary">
           Submit
         </button>

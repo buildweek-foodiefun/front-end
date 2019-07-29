@@ -1,22 +1,32 @@
+body{
+  background: url('https://www.dineout.co.in/blog/wp-content/uploads/2018/10/shutterstock_446808100-1030x538.jpeg');
+  background-size:100%;
+  
+}
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 90vw;
+    max-width: 75vw;
     margin: 40px auto;
-    background: #fff;
+    background: black;
+    color:white;
     padding: 15px;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+   
+    opacity: 0.9;
   }
   
   label {
-    font-size: 0.8rem;
+    font-size: 1.7rem;
     text-align: left;
+    margin-top:20px;
   }
   
   legend {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom:20px;
   }
   
   input {
@@ -24,15 +34,27 @@ form {
     margin: 10px auto;
     padding: 4px;
     max-width: 458px;
-    width: 100%;
+    width: 200px;
     height: 30px;
-    border: 1px solid #e1467c;
+    border: 1px solid #46e160;
     box-sizing: border-box;
     border-radius: 8px;
+    margin-bottom:20px;
   }
   
+  input[type=text] {
+    border: 2px solid #46e160;
+    border-radius: 4px;
+    border-radius: 8px;
+    text-align:center;
+    margin-bottom:20px;
+  }
+  input[type=number]{
+    text-align:center;
+    margin-top:20px;
+  }
   button {
-    background: linear-gradient(109.1deg, #4f73c3 0%, #3c46a2 100%);
+    background: linear-gradient(109.1deg, #c3bb4f 0%, #3ca24a 100%);
     box-shadow: 0px 10px 20px rgba(101, 41, 255, 0.15);
     border-radius: 30px;
     border: none;
@@ -49,3 +71,10 @@ form {
     width: 100%;
     border: 0px;
   }
+
+  textarea{
+    border:1px solid #46e160;
+    margin-top:10px;
+  }
+  
+  
