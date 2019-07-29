@@ -85,23 +85,15 @@ function Form({addReview}) {
         <div className="form-group">
           <label for="comments">Comments</label>
           <div>
-          <textarea 
-             type="text"
-             value={restaurant.comments}
-             name='comments'
-             className="form-control"
-             placeholder="Enter Comments"
-             onChange={handleChange}
-          rows="6" cols="33"></textarea>
+            <textarea 
+              type="text"
+              value={restaurant.comments}
+              name='comments'
+              className="form-control"
+              placeholder="Enter Comments"
+              onChange={handleChange}
+            rows="6" cols="33"></textarea>
           </div>
-          <input
-            type="text"
-            value={restaurant.comments}
-            name='comments'
-            className="form-control"
-            placeholder="Enter Comments"
-            onChange={handleChange}
-          />
         </div>
         <div className="form-group">
           <label for="waitTime">Wait Time</label>
