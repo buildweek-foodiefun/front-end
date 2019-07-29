@@ -110,12 +110,12 @@ function Form({addReview}) {
         <div className="form-group">
           <label for="photoOfOrder">Photo of Order</label>
           <input
-            type="text"
             value={restaurant.photoOfOrder}
             name='photoOfOrder'
             className="form-control"
             placeholder="photo of order"
             onChange={handleChange}
+            type="file"
           />
         </div>
         <div className="form-group">
