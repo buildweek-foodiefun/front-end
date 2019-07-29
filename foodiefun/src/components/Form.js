@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './FormStyles.css';
 
-function Form() {
+function Form({addReview}) {
     const [restaurant, setRestaurant] = useState({
                                                 restaurantName: '',
                                                 restaurantType: '',
@@ -20,6 +20,7 @@ function Form() {
     const handleSubmit = event => {
         event.preventDefault();
         console.log(restaurant);
+        addReview(restaurant);
         setRestaurant({
                         restaurantName: '',
                         restaurantType: '',
