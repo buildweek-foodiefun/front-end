@@ -28,6 +28,7 @@ const App = () => {
 		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} />} />
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
+                    console.log(props.match);
                     return <ReviewForm {...props} initialCard={targetedReview} addReview={addReview} />;  
                   }}/>
 		</div>

@@ -135,7 +135,7 @@ function ReviewForm(props) {
               className="form-control"
               placeholder="photo of order"
               onChange={handleChange}
-              type="file"
+              type="text"
             />
             </div>
           </div>
