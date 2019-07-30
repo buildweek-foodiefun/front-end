@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import {Route, Link} from 'react-router-dom';
 
 
 import Form from './components/Form'
@@ -16,10 +17,13 @@ const App = () => {
 
 	return (
 		<div className='App'>
-					<Form />
-          {/* <ReviewForm addReview={addReview} /> */}
-          {console.log(reviews)}
-		  {/* <UserInfo data = {mockarray} /> */}
+      <Link to='/loginform'>Login Form</Link>
+      <Link to='/'>Home</Link>
+      <Link to='/formreview'>Review Forms</Link>
+			<Form /> 
+      <ReviewForm addReview={addReview} />
+      {console.log(reviews)}
+		  <UserInfo data = {mockarray} />
 		</div>
 	)
 }
