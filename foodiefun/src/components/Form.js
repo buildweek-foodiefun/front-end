@@ -1,87 +1,98 @@
-import React, { useContext } from 'react'
+import React from "react";
+import "./Form.css";
 
-import Avatar from '@material-ui/core/Avatar'
-import Button from '@material-ui/core/Button'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import FormControl from '@material-ui/core/FormControl'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
-import Input from '@material-ui/core/Input'
-import InputLabel from '@material-ui/core/InputLabel'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import MenuItem from '@material-ui/core/MenuItem'
-import Select from '@material-ui/core/Select'
-import withStyles from '@material-ui/core/styles/withStyles'
+const Form = () => {
+  return (
+    <div class="login-wrap">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked />
+        <label for="tab-1" class="tab">
+          Sign In
+        </label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up" />
+        <label for="tab-2" class="tab">
+          Sign Up
+        </label>
+        <div class="login-form">
+          <div class="sign-in-htm">
+            <div class="group">
+              <label for="user" class="label">
+                Username
+              </label>
+              <input id="user" type="text" class="input" />
+            </div>
+            <div class="group">
+              <label for="pass" class="label">
+                Password
+              </label>
+              <input
+                id="pass"
+                type="password"
+                class="input"
+                data-type="password"
+              />
+            </div>
+            <div class="group">
+              <input id="check" type="checkbox" class="check" checked />
+              <label for="check">
+                <span class="icon" /> Keep me Signed in
+              </label>
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="Sign In" />
+            </div>
+            <div class="hr" />
+            <div class="foot-lnk">
+              <a href="#forgot">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="sign-up-htm">
+            <div class="group">
+              <label for="user" class="label">
+                Username
+              </label>
+              <input id="user" type="text" class="input" />
+            </div>
+            <div class="group">
+              <label for="pass" class="label">
+                Password
+              </label>
+              <input
+                id="pass"
+                type="password"
+                class="input"
+                data-type="password"
+              />
+            </div>
+            <div class="group">
+              <label for="pass" class="label">
+                Repeat Password
+              </label>
+              <input
+                id="pass"
+                type="password"
+                class="input"
+                data-type="password"
+              />
+            </div>
+            <div class="group">
+              <label for="pass" class="label">
+                Email Address
+              </label>
+              <input id="pass" type="text" class="input" />
+            </div>
+            <div class="group">
+              <input type="submit" class="button" value="Sign Up" />
+            </div>
+            <div class="hr" />
+            <div class="foot-lnk">
+              <label for="tab-1">Already Member?</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-import styles from './styles/FormStyles'
-import { LanguageContext } from './contexts/LanguageContext'
-
-const words = {
-	english: {
-		signIn: 'Sign In',
-		email: 'Email Address',
-		password: 'Password',
-		rememberMe: 'Remember Me'
-	},
-	french: {
-		signIn: 'Se Connector',
-		email: 'Adresse Electronique',
-		password: 'Mot de Passe',
-		rememberMe: 'Souviens-toi De Moi'
-	},
-	spanish: {
-		signIn: 'Registrarse',
-		email: 'Correo Electronico',
-		password: 'Contrasena',
-		rememberMe: 'Recuerdame'
-	}
-}
-
-const Form = props => {
-	const { language, changeLanguage } = useContext(LanguageContext)
-	const { classes } = props
-	const { signIn, email, password, rememberMe } = words[language]
-
-	return (
-		<main className={classes.main}>
-			<Paper className={classes.paper}>
-				<Avatar className={classes.avatar}>
-					<LockOutlinedIcon />
-				</Avatar>
-				<Typography variant="h5">{signIn}</Typography>
-				<Select value={language} onChange={changeLanguage}>
-					<MenuItem value="english">English</MenuItem>
-					<MenuItem value="french">French</MenuItem>
-					<MenuItem value="spanish">Spanish</MenuItem>
-				</Select>
-				<form className={classes.form}>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="email">{email}</InputLabel>
-						<Input id="email" name="email" autoFocus />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="password">{password}</InputLabel>
-						<Input id="password" name="password" autoFocus />
-					</FormControl>
-					<FormControlLabel
-						control={<Checkbox color="primary" />}
-						label={rememberMe}
-					/>
-					<Button
-						variant="contained"
-						type="submit"
-						fullWidth
-						color="primary"
-						className={classes.submit}
-					>
-						{signIn}
-					</Button>
-				</form>
-			</Paper>
-		</main>
-	)
-}
-
-export default withStyles(styles)(Form)
+export default Form;
