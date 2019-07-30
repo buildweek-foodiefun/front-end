@@ -39,10 +39,10 @@ function Form({addReview}) {
       <fieldset>
         <legend>Rate the Food</legend>
         <div className="form-group row">
+          <div className="column">
           <label for="Restaurant Name" className="col-sm-2 col-form-label">
             Restaurant Name
           </label>
-          <div className="col-sm-10">
             <input
               type="text"
               value={restaurant.restaurantName}
@@ -51,13 +51,15 @@ function Form({addReview}) {
               id="restaurantName"
               onChange={handleChange} 
             />
+            </div>
           </div>
-        </div>
+       
         <div className="form-group row">
+          <div className="coumn">
           <label for="Restaurant Type" className="col-sm-2 col-form-label">
             Restaurant Type
           </label>
-          <div className="col-sm-10">
+         
           <select name="food-types">
   <option value="vegetarian">Vegetarian</option>
   <option value="american">American</option>
@@ -87,10 +89,12 @@ function Form({addReview}) {
               placeholder="Other Types"
               onChange={handleChange} 
             />
+          
           </div>
         </div>
         <div className="form-group row">
-          <label for="menuItem" className="col-sm-2 col-form-label">
+          <div className="column">
+          <label for="menuItem" className="col-form-label">
             Menu Item
           </label>
           <div className="col-sm-10">
@@ -104,7 +108,8 @@ function Form({addReview}) {
             />
           </div>
         </div>
-        <div className="form-group">
+        <div className="form-group row">
+        <div className="column">
           <label for="comments">Comments</label>
           <div>
             <textarea 
@@ -117,7 +122,9 @@ function Form({addReview}) {
             rows="6" cols="33"></textarea>
           </div>
         </div>
-        <div className="form-group">
+        </div>
+        <div className="form-group row">
+        <div className="column">
           <label for="waitTime">Wait Time</label>
           <input
             type="time"
@@ -128,8 +135,10 @@ function Form({addReview}) {
             onChange={handleChange}
             required
           />
+          </div>
         </div>
-        <div className="form-group">
+        <div className="form-group row">
+        <div className="column">
           <label for="photoOfOrder">Photo of Order</label>
           <input
             value={restaurant.photoOfOrder}
@@ -139,8 +148,10 @@ function Form({addReview}) {
             onChange={handleChange}
             type="file"
           />
+          </div>
         </div>
-        <div className="form-group">
+        <div className="form-group row">
+        <div className="column">
           <label for="price">Price</label>
           <input
             type="number"
@@ -151,7 +162,10 @@ function Form({addReview}) {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
+        </div>
+
+        <div className="form-group row">
+        <div className="column">
           <label for="foodRating">Rate the food: 1-worst 5-best</label>
           <input
             type="number"
@@ -161,8 +175,10 @@ function Form({addReview}) {
             placeholder="Rate the Food"
             onChange={handleChange} 
           />
+          </div>
         </div>
-        <div className="form-group">
+        <div className="form-group row">
+        <div className="column">
           <label for="dateOfVisit">Date of Visit</label>
           <input
             type="date"
@@ -173,14 +189,18 @@ function Form({addReview}) {
             onChange={handleChange} 
           />
         </div>
-  
-   
+        </div>
+        <div className="row">
+          <div className="column"> 
+        <button type="button">Edit</button>
+        <button className="delete" type="button">Delete</button>
+        </div>
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
-        <div>
-    
-  </div>
+        
+        </div>
+        </div>
       </fieldset>
     </form>
     )
