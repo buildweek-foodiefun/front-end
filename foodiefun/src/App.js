@@ -15,6 +15,22 @@ const App = () => {
     setReviews([...reviews, {...restaurant, id: Date.now()}])
   }
 
+  // edit submit handler for editing functionality of the restaurant cards.
+  const editReview = editedReview => {
+    const reviewsCopy = [...reviews];
+    const oldReview = reviewsCopy.find(review => review.id === editedReview.id);
+    oldReview.restaurantName = editedReview.restaurantName;
+    oldReview.restaurantType = editedReview.restaurantType;
+    oldReview.menuItem = editedReview.menuType;
+    oldReview.comments = editedReview.comments;
+    oldReview.waitTime = editedReview.waitTime;
+    oldReview.photoOfOrder = editedReview.photoOfOrder;
+    oldReview.price = editedReview.price;
+    oldReview.foodRating = editedReview.foodRating;
+    oldReview.dateOfVisit = editedReview.dateOfVisit;
+    setReviews(reviewsCopy);
+  }
+
 	return (
 		<div className='App'>
       <Link to='/loginform'>Login Form</Link>
@@ -29,7 +45,7 @@ const App = () => {
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);
-                    return <ReviewForm {...props} initialCard={targetedReview} addReview={addReview} />;  
+                    return <ReviewForm {...props} initialCard={targetedReview} addReview={editReview} />;  
                   }}/>
 		</div>
 	)
