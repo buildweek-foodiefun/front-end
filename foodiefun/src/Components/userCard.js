@@ -3,7 +3,7 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
 
 function UserCard (props){
-  console.log("cardprops", props)
+  // console.log("cardprops", props)
 
   return(
 
@@ -44,7 +44,7 @@ function UserCard (props){
         </Card.Meta>
 
       </Card.Content>
-      <button className='delete-btn'>delete</button>
+      <button className='delete-btn' onClick={() => props.deleteReview(props.tileData)}>delete</button>
       <Link to={`/edit/${props.tileData.id}`}><button className='edit-btn'>edit</button></Link>
     </Card>
 

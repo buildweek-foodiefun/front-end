@@ -31,6 +31,13 @@ const App = () => {
     setReviews(reviewsCopy);
   }
 
+  // Delete button functionality. Will need send this onClick function to 
+  // to userCard.js UserCard component: 
+  const deleteReview = data => {
+    console.log(data.id)
+    setReviews([...reviews.filter(review => review.id !== data.id)])
+  }
+
 	return (
 		<div className='App'>
       <Link to='/loginform'>Login Form</Link>
@@ -41,7 +48,7 @@ const App = () => {
       <Route path='/loginform' component={Form} />
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
-		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} />} />
+		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} deleteReview={deleteReview} />} />
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);

@@ -2,7 +2,7 @@ import React from 'react';
 import UserCard from './userCard';
 import SearchSelect from './SearchSelect'
 
-export default function userInfo({data}) {
+export default function userInfo({data, deleteReview}) {
 
 
     if (!data){
@@ -17,7 +17,7 @@ export default function userInfo({data}) {
                 </div>
                 {/* oneRest is the data for only one restuarant */}
                 {data.map((oneRest) =>
-                    <UserCard tileData = {oneRest}/>
+                    <UserCard tileData = {oneRest} deleteReview={deleteReview} />
                 )}
 
             </div>
