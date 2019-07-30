@@ -24,9 +24,9 @@ const App = () => {
 				<PageContent>
 					<Navbar />
 					{/* <Form /> */}
-          <ReviewForm addReview={addReview} />
+          {/* <ReviewForm addReview={addReview} /> */}
           {console.log(reviews)}
-          {/* <UserInfo data = {mockarray} /> */}
+          <UserInfo data = {mockarray} />
 				</PageContent>
 			</LanguageProvider>
 		</ThemeProvider>

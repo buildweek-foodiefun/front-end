@@ -13,7 +13,7 @@ export default function userInfo({data}) {
         return <section className = 'userCard gridview'>
             <div>
                 <div>
-                    Search bar goes here
+                    <SearchSelect/>
                 </div>
                 {/* oneRest is the data for only one restuarant */}
                 {data.map((oneRest) =>

@@ -6,29 +6,29 @@ import mockarray from './mockarray'
 var arrTypes = []
 
 mockarray.map(restaurant => ( 
-    arrTypes.push(restaurant.restaurantType)
+  arrTypes.push({
+    key: restaurant.restaurantType,
+    text : restaurant.restaurantType,
+    value : restaurant.restaurantType
+  })
+
 ));
 
 console.log("types", arrTypes);
 
 
 
-// console.log("faker", addressDefinitions)
-// const stateOptions = _.map(addressDefinitions.state, (state, index) => ({
-//   key: addressDefinitions.state_abbr[index],
-//   text: state,
-//   value: addressDefinitions.state_abbr[index],
-// }))
+const SearchSelect = () => (
+  <Dropdown
+    placeholder='Restaurant Type'
 
-// const SearchSelect = () => (
-//   <Dropdown
-//     placeholder='State'
-//     fluid
-//     multiple
-//     search
-//     selection
-//     options={stateOptions}
-//   />
-// )
+    fluid
+    multiple
+    search
+    selection
+    options={arrTypes}
+    value
+  />
+)
 
-// export default SearchSelect
+export default SearchSelect
