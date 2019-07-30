@@ -54,40 +54,39 @@ function ReviewForm({addReview}) {
         
           <div className="form-group row">
             <div className="coumn">
-            <label for="Restaurant Type" className="col-sm-2 col-form-label">
-              Restaurant Type
-            </label>
-          
-            <select name="food-types">
-    <option value="vegetarian">Vegetarian</option>
-    <option value="american">American</option>
-    <option value="fast food">Fast Food</option>
-    <option value="mexican">Mexican</option>
-    <option value="italian">Italian</option>
-    <option value="ethiopian">Ethiopian</option>
-    <option value="greek">Greek</option>
-    <option value="ihop">IHOP</option>
-    <option value="olivegarden">Olive Garden</option>
-    <option value="sweetgreen">Sweetgreen</option>
-    <option value="mccormicksmit">Ethiopian</option>
-    <option value="mccormick">Mccormick and Schmick's</option>
-    <option value="redlobster">Red Lobster</option>
-    <option value="indian">Indian</option>
-    <option value="soul food">Soul Food</option>
-    <option value="thai">Thai</option>
-    <option value="mediterranean">Mediterranean</option>
-    <option value="Outback">Outback</option>
-  </select>
-              <input
-                type="text"
-                value={restaurant.restaurantType}
-                name='restaurantType'
-                className="form-control"
-                id="restaurantType"
-                placeholder="Other Types"
-                onChange={handleChange} 
-              />
-            
+              <label for="Restaurant Type" className="col-sm-2 col-form-label">
+                Restaurant Type
+              </label>
+
+              {/* event handler experiment on select html tag */}
+              <select 
+              name="food-types"
+              type="text"
+              value={restaurant.restaurantType}
+              name='restaurantType'
+              className="form-control"
+              id="restaurantType"
+              placeholder="Other Types"
+              onChange={handleChange}>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="american">American</option>
+                <option value="fast food">Fast Food</option>
+                <option value="mexican">Mexican</option>
+                <option value="italian">Italian</option>
+                <option value="ethiopian">Ethiopian</option>
+                <option value="greek">Greek</option>
+                <option value="ihop">IHOP</option>
+                <option value="olivegarden">Olive Garden</option>
+                <option value="sweetgreen">Sweetgreen</option>
+                <option value="mccormicksmit">Ethiopian</option>
+                <option value="mccormick">Mccormick and Schmick's</option>
+                <option value="redlobster">Red Lobster</option>
+                <option value="indian">Indian</option>
+                <option value="soul food">Soul Food</option>
+                <option value="thai">Thai</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="Outback">Outback</option>
+              </select>
             </div>
           </div>
           <div className="form-group row">

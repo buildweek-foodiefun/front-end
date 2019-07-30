@@ -2,18 +2,25 @@
 .form-container {
 
     form {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-        // justify-content: center;
         max-width: 75vw;
         margin: 40px auto;
         background: white;
         color: grey;
         padding: 15px;
         box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-        // display:flex;
         opacity: 0.9;
+    }
+
+    fieldset {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+
+        width: 300px;
     }
     
     label {
@@ -94,5 +101,5 @@
     //     width: 33.33%;
     // }
 
-    
+
 }
