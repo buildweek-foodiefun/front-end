@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import Form from "./components/Form";
-import ReviewForm from "./components/ReviewForm/ReviewForm";
-import UserInfo from "./components/userInfo";
-import mockarray from "./components/mockarray";
-import Navbar from "./components/Navbar";
+import Form from "./Components/Form";
+import ReviewForm from "./Components/ReviewForm/ReviewForm";
+import UserInfo from "./Components/userInfo";
+import mockarray from "./Components/mockarray";
+import Navbar from "./Components/Navbar";
 
 const App = () => {
   const [reviews, setReviews] = useState([]);

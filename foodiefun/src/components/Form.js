@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import "./Form.css";
 
 const Form = () => {
   const [creds, setCreds] = useState({ userName: "", password: "" });
+  const usernameFieldRef = useRef();
+  const passwordFieldRef = useRef();
 
   const changeHandler = e => {
     setCreds({ ...creds, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = values => {
+  const handleSubmit = event => {
     //   if (values.email === "alreadytaken@atb.dev") {
     //   	setErrors({ email: "That email is already taken" });
     //   } else {
+    event.preventDefault();
+    const username = usernameFieldRef.current.value;
+    const password = passwordFieldRef.current.value;
     axios
-      .post("https://foodiefun-api.herokuapp.com/api/auth/register", values)
+      .post("https://foodiefun-api.herokuapp.com/api/auth/login", { username, password })
       .then(res => {
         console.log(res.data); // Data was created successfully and logs to console
       })
@@ -43,6 +48,7 @@ const Form = () => {
                   Username
                 </label>
                 <input
+                  ref={usernameFieldRef}
                   name="userName"
                   onChange={changeHandler}
                   value={creds.userName}
@@ -56,6 +62,7 @@ const Form = () => {
                   Password
                 </label>
                 <input
+                  ref={passwordFieldRef}
                   onChange={changeHandler}
                   name="password"
                   value={creds.password}
