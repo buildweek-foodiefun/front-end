@@ -1,28 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import UserCard from './userCard';
 import SearchSelect from './SearchSelect'
-import DropdownExampleControlled from './SearchSelect'
-
-export default function userInfo({data}) {
 
 
-    if (!data){
-        return <div>Loading Foodie Cards...</div>
+
+
+
+
+
+
+export default class  userInfo extends Component{
+    constructor(props) {
+        super(props);
+        //this.state = { selectedFilterThingies: [] }
+        this.searchSelectHandler = this.searchSelectHandler.bind(this);
     }
 
-    else{
-        return <section className = 'userCard gridview'>
-            <div>
+    searchSelectHandler(value) {
+        this.setState({ selectedFilterThingies: value });
+        console.log("searched array", value)
+    }
+
+    
+    render(){
+
+        //console.log("updatehandler", {this.searchSelectHandler})
+
+        if (!this.props.data){
+            return <div>Loading Foodie Cards...</div>
+        }
+       
+        else{
+            return <section className = 'userCard gridview'>
                 <div>
-                    <SearchSelect/>
-                </div>
+
+                
+
+                    <div>
+                        <SearchSelect updateHandler={this.searchSelectHandler} />
+                    </div>
+
 
                     {/* oneRest is the data for only one restuarant */}
-                {data.map((oneRest) =>
-                    <UserCard tileData = {oneRest}/>
-                )}
+                    {this.props.data.map((oneRest) =>
+                        <UserCard tileData = {oneRest}/>
+                    )}
 
-            </div>
-        </section>
+                </div>
+            </section>
+        }
     }
 }

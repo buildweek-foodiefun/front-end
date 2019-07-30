@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 function UserCard (props){
-  console.log("cardprops", props)
+  // console.log("cardprops", props)
 
   return(
 

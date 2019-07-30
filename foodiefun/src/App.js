@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-
-
+import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Form from './components/Form'
 import ReviewForm from './components/ReviewForm/ReviewForm';
@@ -22,12 +21,13 @@ const App = () => {
 		<ThemeProvider>
 			<LanguageProvider>
 				<PageContent>
+
 					<Navbar />
 					{/* <Form /> */}
-          			{/* <ReviewForm addReview={addReview} /> */}
-					{console.log(reviews)}
-					  
-          			<UserInfo data = {mockarray} />
+         			{/*<ReviewForm addReview={addReview} /> */}
+          			{console.log(reviews)}
+         			<UserInfo data = {mockarray} />
+
 				</PageContent>
 			</LanguageProvider>
 		</ThemeProvider>
@@ -35,3 +35,4 @@ const App = () => {
 }
 
 export default App
+

@@ -17,14 +17,17 @@ mockarray.map(restaurant => (
 
 export default class SearchSelect extends Component {
   state = {
-    dropdownSelection: {},
+    dropdownSelection: [],
   }
  
-  handleChange = (e, { value }) => this.setState({ dropdownSelection: value })
+ handleChange = (e, { value }) => {
+    this.setState({ dropdownSelection: value });
+    this.props.updateHandler(value);
+  }
   
   render() {
 
-    console.log(this.state.dropdownSelection)
+   // console.log("state", this.state.dropdownSelection)
 
     return (
       <Dropdown
