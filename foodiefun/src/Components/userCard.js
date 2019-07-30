@@ -43,6 +43,8 @@ function UserCard (props){
         </Card.Meta>
 
       </Card.Content>
+      <button className='delete-btn'>delete</button>
+      <button className='edit-btn'>edit</button>
     </Card>
 
   )

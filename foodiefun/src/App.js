@@ -26,6 +26,7 @@ const App = () => {
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
 		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} />} />
+      {/* <Route path='/edit/:id' render={props => <ReviewForm} */}
 		</div>
 	)
 }

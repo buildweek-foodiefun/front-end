@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './FormStyles.scss';
 
-function ReviewForm({addReview}) {
-    const [restaurant, setRestaurant] = useState({
+function ReviewForm(props) {
+    const {addReview, initialCard} = props;
+    const [restaurant, setRestaurant] = useState(initialCard || {
                                                 restaurantName: '',
                                                 restaurantType: '',
                                                 menuItem: '', 
@@ -31,6 +32,7 @@ function ReviewForm({addReview}) {
                         foodRating: '', 
                         dateOfVisit: ''})
     }
+
 
     const foodOptions = ['Vegetarian', 'American', 'Fast Food', 'Mexican', 'Italian', 'Ethiopian', 'Greek', 'Indian', 'Soul Food', 'Thai', 'Mediterranean']
 
