@@ -1,0 +1,99 @@
+/* body{
+  background: url('https://www.dineout.co.in/blog/wp-content/uploads/2018/10/shutterstock_446808100-1030x538.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+form {
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 75vw;
+  margin: 40px auto;
+  background: white;
+  color: grey;
+  padding: 15px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  display:flex;
+  opacity: 0.9;
+}
+
+label {
+  font-size: 1.7rem;
+  text-align: left;
+  margin-top:20px;
+}
+
+legend {
+  font-size: 2.5rem;
+  margin-bottom:20px;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 4px;
+  max-width: 458px;
+  width: 200px;
+  height: 30px;
+  border: 3px solid #46e160;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom:20px;
+
+}
+
+input[type=text] {
+  border: 3px solid #46e160;
+  border-radius: 4px;
+  border-radius: 8px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+input[type=number]{
+  text-align:center;
+  margin-top:20px;
+}
+button {
+  background: linear-gradient(109.1deg, #c3bb4f 0%, #3ca24a 100%);
+  box-shadow: 0px 10px 20px rgba(101, 41, 255, 0.15);
+  border-radius: 30px;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  width: 175px;
+  height: 50px;
+}
+.delete{
+  background: linear-gradient(109.1deg, #c35d4f 0%, #a23c3c 100%);
+  box-shadow: 0px 10px 20px rgba(101, 41, 255, 0.15);
+  border-radius: 30px;
+  border: none;
+  padding: 5px 10px;
+  color: #fff;
+  width: 175px;
+  height: 50px;
+  margin-top:15px;
+
+}
+button[disabled] {
+  opacity: 0.5;
+}
+
+fieldset {
+  width: 100%;
+  border: 0px;
+}
+
+textarea{
+  border:3px solid #46e160;
+  margin-top:10px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+   */
+  
