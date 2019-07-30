@@ -1,34 +1,43 @@
-import React from 'react';
-import { Dropdown } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import {Grid, Segment,  Dropdown } from 'semantic-ui-react'
+
 import mockarray from './mockarray'
 
 
-var arrTypes = []
+
+var options = []
 
 mockarray.map(restaurant => ( 
-  arrTypes.push({
+  options.push({
     key: restaurant.restaurantType,
     text : restaurant.restaurantType,
     value : restaurant.restaurantType
   })
+))
 
-));
+export default class SearchSelect extends Component {
+  state = {
+    dropdownSelection: {},
+  }
+ 
+  handleChange = (e, { value }) => this.setState({ dropdownSelection: value })
+  
+  render() {
 
-console.log("types", arrTypes);
+    console.log(this.state.dropdownSelection)
 
+    return (
+      <Dropdown
+        placeholder = 'Choose Restuarant Type'
+        onChange={this.handleChange}
+        options={options}
+        fluid
+        multiple
+        search
+        selection
+        value={this.state.dropdownSelection}
+      />
 
-
-const SearchSelect = () => (
-  <Dropdown
-    placeholder='Restaurant Type'
-
-    fluid
-    multiple
-    search
-    selection
-    options={arrTypes}
-    value
-  />
-)
-
-export default SearchSelect
+    )
+  }
+}

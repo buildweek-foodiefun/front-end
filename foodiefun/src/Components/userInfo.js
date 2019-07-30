@@ -1,6 +1,7 @@
 import React from 'react';
 import UserCard from './userCard';
 import SearchSelect from './SearchSelect'
+import DropdownExampleControlled from './SearchSelect'
 
 export default function userInfo({data}) {
 
@@ -15,7 +16,8 @@ export default function userInfo({data}) {
                 <div>
                     <SearchSelect/>
                 </div>
-                {/* oneRest is the data for only one restuarant */}
+
+                    {/* oneRest is the data for only one restuarant */}
                 {data.map((oneRest) =>
                     <UserCard tileData = {oneRest}/>
                 )}
