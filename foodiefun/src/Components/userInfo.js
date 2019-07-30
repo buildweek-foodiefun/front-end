@@ -34,11 +34,31 @@ export default class  userInfo extends Component{
             return <section className = 'userCard gridview'>
                 <div>
 
-                
-
                     <div>
                         <SearchSelect updateHandler={this.searchSelectHandler} />
                     </div>
+
+
+                 
+                    
+                    {/*
+                    --------------IDEA-----------
+                    if (no items in value[],)
+                        {this.props.data.map((oneRest) =>
+                        <UserCard tileData = {oneRest}/>
+                    )}
+
+                    else{
+                        for each item in value, 
+                           newarray= this.props.data.filter(item => this.props.data.restuarantType === item)
+
+                           {newarray((oneRest) =>
+                            <UserCard tileData = {oneRest}/>
+                    )}
+                    }
+
+                    ( example array ["Fast Food", "Japanese", "Mexican" ])
+                    */}
 
 
                     {/* oneRest is the data for only one restuarant */}
