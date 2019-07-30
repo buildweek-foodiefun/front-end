@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import UserInfo from './Components/UserInfo';
-import mockarray from './Components/mockarray';
+import UserInfo from './components/userInfo';
+import mockarray from './components/mockarray';
 
 
 function App() {

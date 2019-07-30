@@ -1,5 +1,5 @@
-import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import React from './node_modules/react'
+import { Card, Icon, Image } from './node_modules/semantic-ui-react'
 
 function UserCard (props){
   console.log("cardprops", props)

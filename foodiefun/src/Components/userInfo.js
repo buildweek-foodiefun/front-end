@@ -1,5 +1,6 @@
-import React from 'react';
+import React from './node_modules/react';
 import UserCard from './UserCard';
+import SearchSelect from './SearchSelect'
 
 export default function userInfo({data}) {
 
@@ -12,7 +13,7 @@ export default function userInfo({data}) {
         return <section className = 'userCard gridview'>
             <div>
                 <div>
-                   Insert search tabs here
+                    Search bar goes here
                 </div>
                 {/* oneRest is the data for only one restuarant */}
                 {data.map((oneRest) =>

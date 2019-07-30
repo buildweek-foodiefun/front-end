@@ -1,9 +1,20 @@
-// import faker from 'faker'
-// import _ from 'lodash'
-// import React from 'react'
-// import { Dropdown } from 'semantic-ui-react'
+import _ from './node_modules/lodash'
+import React from './node_modules/react'
+import { Dropdown } from './node_modules/semantic-ui-react'
+import mockarray from './mockarray'
 
-// const addressDefinitions = faker.definitions.address
+
+var arrTypes = []
+
+mockarray.map(restaurant => ( 
+    arrTypes.push(restaurant.restaurantType)
+));
+
+console.log("types", arrTypes);
+
+
+
+// console.log("faker", addressDefinitions)
 // const stateOptions = _.map(addressDefinitions.state, (state, index) => ({
 //   key: addressDefinitions.state_abbr[index],
 //   text: state,
