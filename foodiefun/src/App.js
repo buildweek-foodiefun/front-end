@@ -9,7 +9,7 @@ import UserInfo from './components/userInfo';
 import mockarray from './components/mockarray';
 
 const App = () => {
-  const [reviews, setReviews] = useState([]);
+  const [reviews, setReviews] = useState([...mockarray]);
 
   const addReview = restaurant => {
     setReviews([...reviews, {...restaurant, id: Date.now()}])
@@ -20,10 +20,12 @@ const App = () => {
       <Link to='/loginform'>Login Form</Link>
       <Link to='/'>Home</Link>
       <Link to='/formreview'>Review Forms</Link>
-			<Form /> 
-      <ReviewForm addReview={addReview} />
+			{/* <Form />  */}
+      <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} />
+      <Route path='/loginform' component={Form} />
+      {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
-		  <UserInfo data = {mockarray} />
+		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} />} />
 		</div>
 	)
 }
