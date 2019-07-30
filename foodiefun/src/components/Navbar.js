@@ -1,72 +1,45 @@
-// import React, { useContext, Component } from 'react'
+import React from "react";
+import "./Navbar.css";
+import { image } from "./img/foodiefun-logo-long.png";
 
-// import AppBar from '@material-ui/core/AppBar'
-// import Toolbar from '@material-ui/core/Toolbar'
-// import IconButton from '@material-ui/core/IconButton'
-// import Typography from '@material-ui/core/Typography'
-// import InputBase from '@material-ui/core/InputBase'
-// import SearchIcon from '@material-ui/icons/Search'
-// import Switch from '@material-ui/core/Switch'
-// import { withStyles } from '@material-ui/core/styles'
+const Navbar = () => {
+  return (
+    <div>
+      <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+          <i class="fas fa-bars" />
+        </span>
+        <img src={image} />
+        <ul class="main-nav" id="js-menu">
+          <li>
+            <a href="#" class="nav-links">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">
+              SignIn/SignUp
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">
+              Write a Review
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-links">
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
 
-// import styles from './styles/NavbarStyles'
-// import { ThemeContext } from './contexts/ThemeContext'
-// import { LanguageContext } from './contexts/LanguageContext'
-
-// const content = {
-// 	english: {
-// 		search: 'Search',
-// 		flag: 'EN'
-// 	},
-// 	russian: {
-// 		search: 'поиск',
-// 		flag: 'RU'
-// 	},
-// 	french: {
-// 		search: 'Chercher',
-// 		flag: 'FR'
-// 	},
-// 	spanish: {
-// 		search: 'Buscar',
-// 		flag: 'SP'
-// 	}
-// }
-
-// const Navbar = props => {
-// 	const { isDarkMode, toggleTheme } = useContext(ThemeContext)
-// 	const { language } = useContext(LanguageContext)
-
-// 	const { classes } = props
-// 	const { search, flag } = content[language]
-
-// 	return (
-// 		<div className={classes.root}>
-// 			<AppBar position="static" color={isDarkMode ? 'default' : 'primary'}>
-// 				<Toolbar>
-// 					<IconButton className={classes.menuButton} color="inherit">
-// 						<span>{flag}</span>
-// 					</IconButton>
-// 					<Typography className={classes.title} variant="h6" color="inherit">
-// 						App Title
-// 					</Typography>
-// 					<Switch onChange={toggleTheme} />
-// 					<div className={classes.row} />
-// 					<div className={classes.search}>
-// 						<div className={classes.searchIcon}>
-// 							<SearchIcon />
-// 						</div>
-// 						<InputBase
-// 							placeholder={`${search}...`}
-// 							classes={{
-// 								root: classes.inputRoot,
-// 								input: classes.inputInput
-// 							}}
-// 						/>
-// 					</div>
-// 				</Toolbar>
-// 			</AppBar>
-// 		</div>
-// 	)
-// }
-
-// export default withStyles(styles)(Navbar)
+export default Navbar;
