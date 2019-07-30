@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 
 function UserCard (props){
   console.log("cardprops", props)
@@ -44,7 +45,7 @@ function UserCard (props){
 
       </Card.Content>
       <button className='delete-btn'>delete</button>
-      <button className='edit-btn'>edit</button>
+      <Link to={`/edit/${props.tileData.id}`}><button className='edit-btn'>edit</button></Link>
     </Card>
 
   )
