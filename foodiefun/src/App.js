@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 
-import Form from './components/Form';
+import ReviewForm from './components/ReviewForm/ReviewForm';
 
 function App() {
   const [reviews, setReviews] = useState([]);
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       {console.log(reviews)}
-      <Form addReview={addReview} />
+      <ReviewForm addReview={addReview} />
     </div>
   );
 }

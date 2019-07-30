@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './FormStyles.css';
-function Form({addReview}) {
+
+function ReviewForm({addReview}) {
     const [restaurant, setRestaurant] = useState({
                                                 restaurantName: '',
                                                 restaurantType: '',
@@ -200,4 +201,4 @@ function Form({addReview}) {
     </form>
     )
 }
-export default Form;
+export default ReviewForm;
