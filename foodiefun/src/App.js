@@ -21,9 +21,9 @@ const App = () => {
 			<LanguageProvider>
 				<PageContent>
 					<Navbar />
-					{/* <Form /> */}
-          <ReviewForm addReview={addReview} />
-          {console.log(reviews)}
+					<Form />
+          {/* <ReviewForm addReview={addReview} />
+          {console.log(reviews)} */}
 				</PageContent>
 			</LanguageProvider>
 		</ThemeProvider>
