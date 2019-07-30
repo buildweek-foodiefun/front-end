@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './FormStyles.css';
 
+
 function Form({addReview}) {
     const [restaurant, setRestaurant] = useState({
                                                 restaurantName: '',
@@ -57,12 +58,33 @@ function Form({addReview}) {
             Restaurant Type
           </label>
           <div className="col-sm-10">
+          <select name="food-types">
+  <option value="vegetarian">Vegetarian</option>
+  <option value="american">American</option>
+  <option value="fast food">Fast Food</option>
+  <option value="mexican">Mexican</option>
+  <option value="italian">Italian</option>
+  <option value="ethiopian">Ethiopian</option>
+  <option value="greek">Greek</option>
+  <option value="ihop">IHOP</option>
+  <option value="olivegarden">Olive Garden</option>
+  <option value="sweetgreen">Sweetgreen</option>
+  <option value="mccormicksmit">Ethiopian</option>
+  <option value="mccormick">Mccormick and Schmick's</option>
+  <option value="redlobster">Red Lobster</option>
+  <option value="indian">Indian</option>
+  <option value="soul food">Soul Food</option>
+  <option value="thai">Thai</option>
+  <option value="mediterranean">Mediterranean</option>
+  <option value="Outback">Outback</option>
+</select>
             <input
               type="text"
               value={restaurant.restaurantType}
               name='restaurantType'
               className="form-control"
               id="restaurantType"
+              placeholder="Other Types"
               onChange={handleChange} 
             />
           </div>
@@ -151,10 +173,14 @@ function Form({addReview}) {
             onChange={handleChange} 
           />
         </div>
-        
+  
+   
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        <div>
+    
+  </div>
       </fieldset>
     </form>
     )
