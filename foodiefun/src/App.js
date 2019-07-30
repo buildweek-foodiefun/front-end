@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-
 import './App.css';
+
 
 import Navbar from './components/Navbar'
 import Form from './components/Form'
 import ReviewForm from './components/ReviewForm/ReviewForm';
+import UserInfo from './components/userInfo';
+import mockarray from './components/mockarray';
 import PageContent from './components/PageContent'
 import { ThemeProvider, ThemeContext } from './components/contexts/ThemeContext'
 import { LanguageProvider } from './components/contexts/LanguageContext'
@@ -21,9 +23,10 @@ const App = () => {
 			<LanguageProvider>
 				<PageContent>
 					<Navbar />
-					<Form />
+					{/* <Form /> */}
           {/* <ReviewForm addReview={addReview} />
           {console.log(reviews)} */}
+          <UserInfo data = {mockarray} />
 				</PageContent>
 			</LanguageProvider>
 		</ThemeProvider>
