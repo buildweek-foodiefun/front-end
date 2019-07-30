@@ -36,6 +36,7 @@ function ReviewForm({addReview}) {
       <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>Rate the Food</legend>
+          
           <div className="form-group row">
             <div className="column">
             <label for="Restaurant Name" className="col-sm-2 col-form-label">
