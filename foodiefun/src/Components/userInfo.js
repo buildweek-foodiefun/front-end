@@ -34,13 +34,9 @@ export default class  userInfo extends Component{
           </div>
 
 
-          
-         
-
-
-          {this.props.data.map(oneRest => {
+          {this.props.data.map(oneRest => (
             <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
-          })}
+          ))}
 
 
         </div>
