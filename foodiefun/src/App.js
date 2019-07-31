@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Link} from 'react-router-dom';
 
@@ -8,9 +8,17 @@ import UserInfo from "./components/userInfo";
 import mockarray from "./components/mockarray";
 import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
+import {axiosWithAuth} from './utils/auth';
 
 const App = () => {
-  const [reviews, setReviews] = useState([...mockarray]);
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    axiosWithAuth().get('https://foodiefun-api.herokuapp.com/api/reviews')
+      .then(res => setReviews(res.data))
+      .catch(err => console.log('you are not logged in', err))
+  }, [])
+
 
   const addReview = restaurant => {
     setReviews([...reviews, { ...restaurant, id: Date.now() }]);
