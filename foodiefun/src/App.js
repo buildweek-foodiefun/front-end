@@ -97,9 +97,6 @@ const App = () => {
       <Navbar />
       {/* <Form /> */}
       {/* <RecipeApp /> */}
-      <Link to='/loginform'>Login Form</Link>
-      <Link to='/'>Home</Link>
-      <Link to='/formreview'>Review Forms</Link>
 			{/* <Form />  */}
       <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} />
       <Route path='/loginform' component={Form} />
