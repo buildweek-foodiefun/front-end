@@ -4,6 +4,7 @@ import './FormStyles.scss';
 function ReviewForm(props) {
     const {addReview, initialCard} = props;
     const [restaurant, setRestaurant] = useState(initialCard || {
+                                                id: Date.now(),
                                                 restaurantName: '',
                                                 restaurantType: '',
                                                 menuItem: '', 
