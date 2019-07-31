@@ -57,12 +57,13 @@ const App = () => {
       <Navbar />
       {/* <Form /> */}
       {/* <RecipeApp /> */}
-      <Link to='/loginform'>Login Form</Link>
-      <Link to='/'>Home</Link>
-      <Link to='/formreview'>Review Forms</Link>
-			{/* <Form />  */}
+      {/* <Link to='/loginform'>Login Form</Link> */}
+      {/* <Link to='/'>Home</Link> */}
+      {/* <Link to='/formreview'>Review Forms</Link> */}
+
       <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} />
       <Route path='/loginform' component={Form} />
+      
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
 

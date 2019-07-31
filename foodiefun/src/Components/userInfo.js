@@ -34,7 +34,7 @@ export default class  userInfo extends Component{
           <div>
 
             <div>
-              <SearchSelect updateHandler={this.searchSelectHandler} />
+              <SearchSelect updateHandler={this.searchSelectHandler} data = {this.props.data} />
       
             </div>
 
@@ -64,7 +64,7 @@ export default class  userInfo extends Component{
           <div>
 
             <div>
-              <SearchSelect updateHandler={this.searchSelectHandler} />
+              <SearchSelect updateHandler={this.searchSelectHandler} data = {this.props.data} />
             </div>
 
             <div class = 'gridview'>

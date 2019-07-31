@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import image from "./img/foodiefun-logo-long.png";
+import {Route, Link} from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -17,19 +18,26 @@ const Navbar = () => {
         />
         <ul class="main-nav" id="js-menu">
           <li>
-            <a href="/" class="nav-links">
+
+
+            <Link to='/' class="nav-links">Home</Link>
+            {/* <a href="/" class="nav-links">
               Home
-            </a>
+            </a> */}
           </li>
           <li>
-            <a href="/SignIn/SignUp" class="nav-links">
+           <Link to='/loginform' class="nav-links">Login Form</Link>
+            {/* <a href="/SignIn/SignUp" class="nav-links">
               SignIn/SignUp
-            </a>
+            </a> */}
+
+
           </li>
           <li>
-            <a href="/Write a Review" class="nav-links">
+          <Link to='/formreview' class="nav-links" >Write a Review</Link>
+            {/* <a href="/Write a Review" class="nav-links">
               Write a Review
-            </a>
+            </a> */}
           </li>
           <li>
             <a href="/Contact Us" class="nav-links">

@@ -3,20 +3,16 @@ import { Grid, Segment, Dropdown } from "semantic-ui-react";
 
 import mockarray from "./mockarray";
 
-var options = [];
 
 
-//check for restuarant type
-mockarray.map(restaurant =>
-  options.push({
-    key: restaurant.restaurantType,
-    text: restaurant.restaurantType,
-    value: restaurant.restaurantType
-  })
-);
+
 
 
 export default class SearchSelect extends Component {
+
+
+ 
+
   state = {
     dropdownSelection: []
   };
@@ -28,6 +24,16 @@ export default class SearchSelect extends Component {
 
   render() {
     //console.log("state", this.state.dropdownSelection)
+
+    var options = [];
+    //check for restuarant type
+    this.props.data.map(restaurant =>
+      options.push({
+        key: restaurant.restaurantType,
+        text: restaurant.restaurantType,
+        value: restaurant.restaurantType
+     })
+    );
 
     return (
       <Dropdown
