@@ -33,19 +33,53 @@ const App = () => {
   };
 
   // edit submit handler for editing functionality of the restaurant cards.
+  // const editReview = editedReview => {
+  //   const reviewsCopy = [...reviews];
+  //   const oldReview = reviewsCopy.find(review => review.id === editedReview.id);
+  //   oldReview.restaurantName = editedReview.restaurantName;
+  //   oldReview.restaurantType = editedReview.restaurantType;
+  //   oldReview.menuItem = editedReview.menuType;
+  //   oldReview.comments = editedReview.comments;
+  //   oldReview.waitTime = editedReview.waitTime;
+  //   oldReview.photoOfOrder = editedReview.photoOfOrder;
+  //   oldReview.price = editedReview.price;
+  //   oldReview.foodRating = editedReview.foodRating;
+  //   oldReview.dateOfVisit = editedReview.dateOfVisit;
+  //   setReviews(reviewsCopy);
+  // }
+
   const editReview = editedReview => {
-    const reviewsCopy = [...reviews];
-    const oldReview = reviewsCopy.find(review => review.id === editedReview.id);
-    oldReview.restaurantName = editedReview.restaurantName;
-    oldReview.restaurantType = editedReview.restaurantType;
-    oldReview.menuItem = editedReview.menuType;
-    oldReview.comments = editedReview.comments;
-    oldReview.waitTime = editedReview.waitTime;
-    oldReview.photoOfOrder = editedReview.photoOfOrder;
-    oldReview.price = editedReview.price;
-    oldReview.foodRating = editedReview.foodRating;
-    oldReview.dateOfVisit = editedReview.dateOfVisit;
-    setReviews(reviewsCopy);
+    axiosWithAuth().put(`https://foodiefun-api.herokuapp.com/api/reviews/${editedReview.id}`, editedReview)
+      .then(res => {
+
+        // For the page.
+        const reviewsCopy = [...reviews];
+        const oldReview = reviewsCopy.find(review => review.id === editedReview.id);
+        oldReview.restaurantName = editedReview.restaurantName;
+        oldReview.restaurantType = editedReview.restaurantType;
+        oldReview.menuItem = editedReview.menuType;
+        oldReview.comments = editedReview.comments;
+        oldReview.waitTime = editedReview.waitTime;
+        oldReview.photoOfOrder = editedReview.photoOfOrder;
+        oldReview.price = editedReview.price;
+        oldReview.foodRating = editedReview.foodRating;
+        oldReview.dateOfVisit = editedReview.dateOfVisit;
+        setReviews(reviewsCopy);
+
+        //For the server:
+        res.data.restaurantName = editedReview.restaurantName;
+        res.data.restaurantType = editedReview.restaurantType;
+        res.data.menuItem = editedReview.menuType;
+        res.data.comments = editedReview.comments;
+        res.data.waitTime = editedReview.waitTime;
+        res.data.photoOfOrder = editedReview.photoOfOrder;
+        res.data.price = editedReview.price;
+        res.data.foodRating = editedReview.foodRating;
+        res.data.dateOfVisit = editedReview.dateOfVisit;
+      })
+      .catch(err => {
+        console.log('Can not edit message', err);
+      })
   }
 
   // Delete button functionality. Will need send this onClick function to 
