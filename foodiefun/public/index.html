@@ -25,15 +25,35 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script>
+      console.clear();
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+const loginBtn = document.getElementById('login');
+const signupBtn = document.getElementById('signup');
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+loginBtn.addEventListener('click', (e) => {
+	let parent = e.target.parentNode.parentNode;
+	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+		if(element !== "slide-up") {
+			parent.classList.add('slide-up')
+		}else{
+			signupBtn.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
+	});
+});
+
+signupBtn.addEventListener('click', (e) => {
+	let parent = e.target.parentNode;
+	Array.from(e.target.parentNode.classList).find((element) => {
+		if(element !== "slide-up") {
+			parent.classList.add('slide-up')
+		}else{
+			loginBtn.parentNode.parentNode.classList.add('slide-up')
+			parent.classList.remove('slide-up')
+		}
+	});
+});
+    </script>
   </body>
 </html>

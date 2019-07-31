@@ -1,37 +1,34 @@
-import React, { Component } from 'react';
-import {Grid, Segment,  Dropdown } from 'semantic-ui-react'
+import React, { Component } from "react";
+import { Grid, Segment, Dropdown } from "semantic-ui-react";
 
-import mockarray from './mockarray'
+import mockarray from "./mockarray";
 
+var options = [];
 
-
-var options = []
-
-mockarray.map(restaurant => ( 
+mockarray.map(restaurant =>
   options.push({
     key: restaurant.restaurantType,
-    text : restaurant.restaurantType,
-    value : restaurant.restaurantType
+    text: restaurant.restaurantType,
+    value: restaurant.restaurantType
   })
-))
+);
 
 export default class SearchSelect extends Component {
   state = {
-    dropdownSelection: [],
-  }
- 
- handleChange = (e, { value }) => {
+    dropdownSelection: []
+  };
+
+  handleChange = (e, { value }) => {
     this.setState({ dropdownSelection: value });
     this.props.updateHandler(value);
-  }
-  
-  render() {
+  };
 
-   // console.log("state", this.state.dropdownSelection)
+  render() {
+    // console.log("state", this.state.dropdownSelection)
 
     return (
       <Dropdown
-        placeholder = 'Choose Restuarant Type'
+        placeholder="Choose Restuarant Type"
         onChange={this.handleChange}
         options={options}
         fluid
@@ -40,7 +37,6 @@ export default class SearchSelect extends Component {
         selection
         value={this.state.dropdownSelection}
       />
-
-    )
+    );
   }
 }
