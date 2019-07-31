@@ -91,7 +91,7 @@ a {
   border: 1px solid blue;
   padding: 15px 20px;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(83, 83, 83, 0.7);
 }
 .login-form .group input[data-type="password"] {
   text-security: circle;
@@ -180,7 +180,7 @@ a {
   text-align: center;
 }
 
-/* @media (max-width: 600px) {
+@media (max-width: 600px) {
   .login-wrap .login-form {
     width: 100%;
     float: none;
@@ -188,4 +188,4 @@ a {
   .login-wrap label {
     margin: 10px 0;
   }
-} */
+}
