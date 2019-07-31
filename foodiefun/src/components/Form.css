@@ -3,6 +3,11 @@
 :before {
   box-sizing: border-box;
 }
+
+body {
+  background: url("https://www.transparenttextures.com/patterns/dark-denim-3.png");
+}
+
 .clearfix:after,
 .clearfix:before {
   content: "";
@@ -24,7 +29,7 @@ a {
   max-width: 525px;
   min-height: 670px;
   position: relative;
-  background: url(https://media.timeout.com/images/105239239/image.jpg)
+  background: url(https://www.theballantynehotel.com/assets/dining-galleryrest.jpg)
     no-repeat center;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
     0 20px 50px 0 rgba(0, 0, 0, 0.19);
@@ -178,6 +183,12 @@ a {
 }
 .foot-lnk {
   text-align: center;
+}
+
+input,
+select,
+textarea {
+  color: #ff0000;
 }
 
 @media (max-width: 600px) {

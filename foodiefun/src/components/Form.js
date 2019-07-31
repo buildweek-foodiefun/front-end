@@ -1,21 +1,24 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import swal from "sweetalert";
 import "./Form.css";
+import axiosAuth from './axiosAuth'
+
+
 
 const Form = () => {
   const [creds, setCreds] = useState({ userName: "", password: "" });
   const usernameFieldRef = useRef();
   const passwordFieldRef = useRef();
 
+
   const changeHandler = e => {
     setCreds({ ...creds, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = event => {
-    //   if (values.email === "alreadytaken@atb.dev") {
-    //   	setErrors({ email: "That email is already taken" });
-    //   } else {
     event.preventDefault();
+    console.log('login');
     const username = usernameFieldRef.current.value;
     const password = passwordFieldRef.current.value;
     axios
@@ -24,13 +27,47 @@ const Form = () => {
         password
       })
       .then(res => {
-        console.log(res.data); // Data was created successfully and logs to console
+        console.log("DATA", res.data)
+        localStorage.setItem('token', res.data.token)
+        swal(
+          "Welcome to Foodie Fun!",
+          "You are now signed in, enjoy your stay!",
+          "success"
+        );
       })
       .catch(err => {
-        console.log(err); // There was an error creating the data and logs to console
+        console.log('LOGIN FAILED', err.response); // There was an error creating the data and logs to console
         // setSubmitting(false);
       });
+
+    const handleSignUp = event => {
+      event.preventDefault();
+      console.log('sign up');
+      const username = usernameFieldRef.current.value;
+      const password = passwordFieldRef.current.value;
+      axios
+        .post("https://foodiefun-api.herokuapp.com/api/auth/Register", {
+          username,
+          password
+        })
+        .then(res => {
+          console.log("DATA", res.data)
+          localStorage.setItem('token', res.data.token)
+          swal(
+            "Welcome to Foodie Fun!",
+            "You have sucsessfully registered, Please log in and enjoy",
+            "success"
+          );
+        })
+        .catch(err => {
+          console.log('SIGNUP FAILED', err.response); // There was an error creating the data and logs to console
+          // setSubmitting(false);
+        });
+
+    }
   };
+
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -90,64 +127,75 @@ const Form = () => {
                   Forgot Password?
                 </a>
               </div>
-              {/* <div className="love">
-                <h3 style={{ color: "#fff", marginTop: "130px" }}>
-                  Made with{" "}
-                  <span role="img" aria-labelledby="HeartFooter">
-                    💖
+            </div>
+
+            {/* <div className="love">
+
+              <h3 style={{ color: "#fff", marginTop: "130px" }}>
+                Made with{" "}
+                <span role="img" aria-labelledby="HeartFooter">
+                  💖
                   </span>{" "}
-                  by Andy Dillon
+                by Andy Dillon
                 </h3>
-              </div> */}
-              <div class="sign-up-htm">
-                <div class="group">
-                  <label for="user" class="label">
-                    Username
+            </div> */}
+            <div class="sign-up-htm">
+              <div class="group">
+                <label for="user" class="label">
+                  Username
                   </label>
-                  <input id="user" type="text" class="input" />
-                </div>
-                <div class="group">
-                  <label for="pass" class="label">
-                    Password
+                <input
+
+
+                  onFocus={{ color: "#ff0000" }}
+                  id="user"
+                  type="text"
+                  class="input"
+                />
+              </div>
+              <div class="group">
+                <label for="pass" class="label">
+                  Password
                   </label>
-                  <input
-                    id="pass"
-                    type="password"
-                    class="input"
-                    data-type="password"
-                  />
-                </div>
-                <div class="group">
-                  <label for="pass" class="label">
-                    Repeat Password
+                <input
+
+                  id="pass"
+                  type="password"
+                  class="input"
+                  data-type="password"
+                />
+              </div>
+              <div class="group">
+                <label for="pass" class="label">
+                  Repeat Password
                   </label>
-                  <input
-                    id="pass"
-                    type="password"
-                    class="input"
-                    data-type="password"
-                  />
-                </div>
-                <div class="group">
-                  <label for="pass" class="label">
-                    Email Address
+                <input
+                  id="pass"
+                  type="password"
+                  class="input"
+                  data-type="password"
+                />
+              </div>
+              <div class="group">
+                <label for="pass" class="label">
+                  Email Address
                   </label>
-                  <input id="pass" type="text" class="input" />
-                </div>
-                <div class="group">
-                  <button type="submit" class="button btn" value="Sign Up" />
-                </div>
-                <div class="hr" />
-                <div class="foot-lnk">
-                  <label for="tab-1">Already Member?</label>
-                </div>
+                <input id="pass" type="text" class="input" />
+              </div>
+              <div class="group">
+                <button type="submit" class="button btn" value="Sign Up" />
+              </div>
+              <div class="hr" />
+              <div class="foot-lnk">
+                <label for="tab-1">Already Member?</label>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </form>
+
+    </form >
   );
 };
 
-export default Form;
+export default Form
