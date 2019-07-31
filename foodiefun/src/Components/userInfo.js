@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UserCard from './userCard';
 import SearchSelect from './SearchSelect'
-
+import "./userInfo.css";
 
 
 export default class  userInfo extends Component{
@@ -30,16 +30,17 @@ export default class  userInfo extends Component{
 
 
       if (this.state.selectedFilterThingies.length < 1){
-        return <section className = 'userCard gridview'>
+        return <section className = 'userCard '>
           <div>
 
             <div>
               <SearchSelect updateHandler={this.searchSelectHandler} />
+      
             </div>
 
-            <div>
+            <div class = 'gridview' >
               {this.props.data.map(oneRest => (
-                <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
+                <UserCard class = 'onecard' tileData={oneRest} setReviews={this.props.setReviews} />
               ))}
             </div>
             
@@ -52,21 +53,23 @@ export default class  userInfo extends Component{
       else{
         let newarray = []
 
+        //check for restuarant type and render from newarray
         newarray = (this.props.data.filter(item => 
           this.state.selectedFilterThingies.some(filter => filter === item.restaurantType)))
 
+          console.log("newarray",newarray)
 
 
-        return <section className = 'userCard gridview'>
+        return <section className = 'userCard '>
           <div>
 
             <div>
               <SearchSelect updateHandler={this.searchSelectHandler} />
             </div>
 
-            <div>
+            <div class = 'gridview'>
               {newarray.map(oneRest => (
-                <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
+                <UserCard class = 'onecard' tileData={oneRest} setReviews={this.props.setReviews} />
                ))}
             </div>
             

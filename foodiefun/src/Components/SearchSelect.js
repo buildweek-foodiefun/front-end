@@ -5,6 +5,8 @@ import mockarray from "./mockarray";
 
 var options = [];
 
+
+//check for restuarant type
 mockarray.map(restaurant =>
   options.push({
     key: restaurant.restaurantType,
@@ -12,6 +14,7 @@ mockarray.map(restaurant =>
     value: restaurant.restaurantType
   })
 );
+
 
 export default class SearchSelect extends Component {
   state = {
@@ -24,7 +27,7 @@ export default class SearchSelect extends Component {
   };
 
   render() {
-    // console.log("state", this.state.dropdownSelection)
+    //console.log("state", this.state.dropdownSelection)
 
     return (
       <Dropdown
@@ -37,6 +40,8 @@ export default class SearchSelect extends Component {
         selection
         value={this.state.dropdownSelection}
       />
+
+      
     );
   }
 }
