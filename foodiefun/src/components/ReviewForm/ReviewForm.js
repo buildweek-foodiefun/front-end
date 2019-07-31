@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './FormStyles.scss';
 
-function ReviewForm({addReview}) {
-    const [restaurant, setRestaurant] = useState({
+function ReviewForm(props) {
+    const {addReview, initialCard} = props;
+    const [restaurant, setRestaurant] = useState(initialCard || {
                                                 restaurantName: '',
                                                 restaurantType: '',
                                                 menuItem: '', 
@@ -10,7 +11,7 @@ function ReviewForm({addReview}) {
                                                 waitTime: '', 
                                                 photoOfOrder: '', 
                                                 price: '', 
-                                                rate: '', 
+                                                foodRating: '', 
                                                 dateOfVisit: ''});
     
     const handleChange = event => {
@@ -28,9 +29,13 @@ function ReviewForm({addReview}) {
                         waitTime: '', 
                         photoOfOrder: '', 
                         price: '', 
-                        rate: '', 
+                        foodRating: '', 
                         dateOfVisit: ''})
     }
+
+
+    const foodOptions = ['Vegetarian', 'American', 'Fast Food', 'Mexican', 'Italian', 'Ethiopian', 'Greek', 'Indian', 'Soul Food', 'Thai', 'Mediterranean']
+
     return (
     <div className='form-container'>
       <form onSubmit={handleSubmit}>
@@ -69,24 +74,10 @@ function ReviewForm({addReview}) {
               id="restaurantType"
               placeholder="Other Types"
               onChange={handleChange}>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="american">American</option>
-                <option value="fast food">Fast Food</option>
-                <option value="mexican">Mexican</option>
-                <option value="italian">Italian</option>
-                <option value="ethiopian">Ethiopian</option>
-                <option value="greek">Greek</option>
-                <option value="ihop">IHOP</option>
-                <option value="olivegarden">Olive Garden</option>
-                <option value="sweetgreen">Sweetgreen</option>
-                <option value="mccormicksmit">Ethiopian</option>
-                <option value="mccormick">Mccormick and Schmick's</option>
-                <option value="redlobster">Red Lobster</option>
-                <option value="indian">Indian</option>
-                <option value="soul food">Soul Food</option>
-                <option value="thai">Thai</option>
-                <option value="mediterranean">Mediterranean</option>
-                <option value="Outback">Outback</option>
+                {/* <option value="vegetarian">Vegetarian</option> */}
+                {foodOptions.map((food, index) => {
+                  return <option key={index} value={food}>{food}</option>
+                })}
               </select>
             </div>
           </div>
@@ -144,7 +135,7 @@ function ReviewForm({addReview}) {
               className="form-control"
               placeholder="photo of order"
               onChange={handleChange}
-              type="file"
+              type="text"
             />
             </div>
           </div>
@@ -166,8 +157,8 @@ function ReviewForm({addReview}) {
             <label for="foodRating">Rate the food: 1-worst 5-best</label>
             <input
               type="number"
-              value={restaurant.rate}
-              name='rate'
+              value={restaurant.foodRating}
+              name='foodRating'
               className="form-control"
               placeholder="Rate the Food"
               onChange={handleChange} 

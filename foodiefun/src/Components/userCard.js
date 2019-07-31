@@ -1,8 +1,14 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
+import {Link} from 'react-router-dom';
 
 function UserCard (props){
-  console.log("cardprops", props)
+  // console.log("cardprops", props)
+  const { setReviews } = props;
+  const deleteReview = data => {
+    console.log(data.id);
+    setReviews(reviews => [...reviews.filter(review => review.id !== data.id)]);
+  };
 
   return(
 
@@ -43,6 +49,8 @@ function UserCard (props){
         </Card.Meta>
 
       </Card.Content>
+      <button className='delete-btn' onClick={() => deleteReview(props.tileData)}>delete</button>
+      <Link to={`/edit/${props.tileData.id}`}><button className='edit-btn'>edit</button></Link>
     </Card>
 
   )
