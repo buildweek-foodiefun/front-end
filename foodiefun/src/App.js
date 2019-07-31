@@ -19,18 +19,18 @@ const App = () => {
       .catch(err => console.log('you are not logged in', err))
   }, [])
 
+  // const addReview = (restaurant) => {
+  //   setReviews([...reviews, { ...restaurant}]);
+  // }
+
   const addReview = (restaurant) => {
-    setReviews([...reviews, { ...restaurant}]);
-  }
-  // const addReview = (restaurant, actions) => {
-  //   console.log('adding to server', restaurant);
-  //   actions.setSubmitting(true);
-  //   axiosWithAuth().post('https://foodiefun-api.herokuapp.com/api/reviews', restaurant)
-  //     .then(res => {
-  //       setReviews([...reviews, { ...restaurant, id: Date.now() }]);
-  //     }
-  //   )
-  // };
+    console.log('adding to server', restaurant);
+    axiosWithAuth().post('https://foodiefun-api.herokuapp.com/api/reviews', restaurant)
+      .then(res => {
+        setReviews([...reviews, {...res.data}]);
+      })
+      .catch(err => console.log('could not add item to server', err))
+  };
 
   // edit submit handler for editing functionality of the restaurant cards.
   const editReview = editedReview => {
