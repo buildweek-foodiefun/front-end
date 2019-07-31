@@ -90,7 +90,7 @@ const Form = () => {
                   Forgot Password?
                 </a>
               </div>
-              <div className="love">
+              {/* <div className="love">
                 <h3 style={{ color: "#fff", marginTop: "130px" }}>
                   Made with{" "}
                   <span role="img" aria-labelledby="HeartFooter">
@@ -98,7 +98,7 @@ const Form = () => {
                   </span>{" "}
                   by Andy Dillon
                 </h3>
-              </div>
+              </div> */}
               <div class="sign-up-htm">
                 <div class="group">
                   <label for="user" class="label">
