@@ -7,7 +7,7 @@ import SearchSelect from './SearchSelect'
 export default class  userInfo extends Component{
   constructor(props) {
     super(props);
-    //this.state = { selectedFilterThingies: [] }
+    this.state = { selectedFilterThingies: [] }
     this.searchSelectHandler = this.searchSelectHandler.bind(this);
   }
 
@@ -16,7 +16,8 @@ export default class  userInfo extends Component{
     console.log("searched array", value)
   }
 
-  
+  // ["Fast Food", "Japanese", "Mexican" ]
+
   render(){
 
     //console.log("updatehandler", {this.searchSelectHandler})
@@ -26,35 +27,79 @@ export default class  userInfo extends Component{
     }
     
     else{
-      return <section className = 'userCard gridview'>
-        <div>
 
+
+      if (this.state.selectedFilterThingies.length < 1){
+        return <section className = 'userCard gridview'>
           <div>
-            <SearchSelect updateHandler={this.searchSelectHandler} />
+
+            <div>
+              <SearchSelect updateHandler={this.searchSelectHandler} />
+            </div>
+
+            <div>
+              {this.props.data.map(oneRest => (
+                <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
+              ))}
+            </div>
+            
+
           </div>
+        </section>
+      }
+    
+    
+      else{
+        let newarray = []
+
+        newarray = (this.props.data.filter(item => 
+          this.state.selectedFilterThingies.some(filter => filter === item.restaurantType)))
 
 
-          {this.props.data.map(oneRest => (
-            <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
-          ))}
+
+        return <section className = 'userCard gridview'>
+          <div>
+
+            <div>
+              <SearchSelect updateHandler={this.searchSelectHandler} />
+            </div>
+
+            <div>
+              {newarray.map(oneRest => (
+                <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
+               ))}
+            </div>
+            
+
+          </div>
+        </section>
+
+      }
 
 
-        </div>
-      </section>
     }
   }
 }
 
 
 
+// // ( example value -is and array 
+//     ["Fast Food", "Japanese", "Mexican" ])
 
 
-{/*
---------------IDEA-----------
-if (no items in value[],)
-  {this.props.data.map((oneRest) =>
-  <UserCard tileData = {oneRest}/>
-)}
+
+
+
+
+
+
+/*
+OLDDDDD
+ {this.props.data.map(oneRest => (
+            <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
+          ))}
+
+
 
 else{
   for each item in value, 
@@ -64,7 +109,5 @@ else{
       <UserCard tileData = {oneRest}/>
 )}
 }
-( example array ["Fast Food", "Japanese", "Mexican" ])
-*/}
 
-{/* oneRest is the data for only one restuarant */}
+*/

@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Link} from 'react-router-dom';
-
+import axios from 'axios'
 import Form from "./components/Form";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
 import UserInfo from "./components/userInfo";
@@ -10,7 +10,20 @@ import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
 
 const App = () => {
-  const [reviews, setReviews] = useState([...mockarray]);
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(async() =>{
+    const reviewState = await axios.get('https://foodiefun-api.herokuapp.com/api/reviews', {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkIiwiaWF0IjoxNTY0NTcxMjM2LCJleHAiOjE1NjQ4MzA0MzZ9.RpdHbaqncnttO3h-Iq6U6MYYGkxmQkTeLSIH3708iXQ'
+      }
+    });
+    setReviews(reviewState.data)
+    //console.log("reviewstate", reviewState.data)
+
+  },[])
 
   const addReview = restaurant => {
     setReviews([...reviews, { ...restaurant, id: Date.now() }]);
@@ -52,7 +65,10 @@ const App = () => {
       <Route path='/loginform' component={Form} />
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
+
 		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} setReviews={setReviews} />} />
+      
+
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);
