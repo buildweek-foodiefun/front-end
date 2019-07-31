@@ -52,7 +52,7 @@ const App = () => {
       <Route path='/loginform' component={Form} />
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
-		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} deleteReview={deleteReview} />} />
+		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} setReviews={setReviews} />} />
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);
