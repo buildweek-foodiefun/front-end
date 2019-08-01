@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import Form from "./Components/Form";
+import Form from "./Components/SignIn";
 import ReviewForm from "./Components/ReviewForm/ReviewForm";
 import UserInfo from "./Components/userInfo";
 import mockarray from "./Components/mockarray";
 import Navbar from "./Components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
+import SignUp from "./Components/SignUp";
+import SignIn from "./Components/SignIn";
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
@@ -18,8 +20,10 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      <Form />
-      <RecipeApp />
+      <SignUp />
+      <SignIn />
+      {/* <RecipeApp /> */}
+      {/* <ReviewForm /> */}
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
       {/* <UserInfo data = {mockarray} /> */}
