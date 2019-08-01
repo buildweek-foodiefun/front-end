@@ -67,17 +67,23 @@ const App = () => {
       {console.log(reviews)}
       
       {/* protected route code for home (UserInfo) */}
+      {/* {
+        localStorage.getItem('token') ? <Route path='/' render={props => <UserInfo {...props} data={reviews} setReviews={setReviews} />} /> : <Redirect to='/signupform' />
+      } */}
       
         <Route exact path='/' render={props => {
-                return localStorage.getItem('token') ? <UserInfo {...props} data={reviews} /> : <Redirect to='/loginform' />
+                return localStorage.getItem('token') ? <UserInfo {...props} data={reviews} setReviews={setReviews} /> : <Redirect to='/loginform' />
         }} /> 
 
       {/* protected route code for ReviewForm */}
+      {/* {
+        localStorage.getItem('token') ? <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> : <Redirect to='/signupform' />
+      } */}
+
       <Route exact path='/formreview' render={props => {
                       return localStorage.getItem('token') ? <ReviewForm {...props} addReview={addReview} /> : <Redirect to='/loginform' />
               }} /> 
       
-      {/* editing functionality */}
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);
