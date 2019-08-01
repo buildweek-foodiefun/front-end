@@ -58,12 +58,6 @@ const App = () => {
       <Navbar />
       {/* <RecipeApp /> */}
       
-      {/* protected route code for ReviewForm */}
-      {
-        localStorage.getItem('token') ? <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> :
-        <Redirect to='/loginform' />
-      }
-      
       {/* <SignUp /> */}
       <Route path='/loginform' component={SignIn} />
       <Route path='/signupform' component={SignUp} />
@@ -75,7 +69,13 @@ const App = () => {
       {/* protected route code for home (UserInfo) */}
       {
         localStorage.getItem('token') ? <Route exact path='/' render={props => <UserInfo {...props} data={reviews} setReviews={setReviews} />} /> :
-        <Redirect to='/loginform' />
+        () => <Redirect to='/loginform' />
+      }
+
+      {/* protected route code for ReviewForm */}
+      {
+        localStorage.getItem('token') ? <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> :
+        () => <Redirect to='/loginform' />
       }
       
       <Route path='/edit/:id' render={props => {

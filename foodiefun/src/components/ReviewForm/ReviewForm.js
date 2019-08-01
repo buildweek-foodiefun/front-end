@@ -37,6 +37,8 @@ const ReviewForm = props => {
       foodRating: "",
       dateOfVisit: ""
     });
+
+    props.history.push('/');
   };
 
   const foodOptions = [

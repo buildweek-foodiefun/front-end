@@ -7,7 +7,7 @@ import image from './img/signup.jpg'
 
 
 
-const SignIn = () => {
+const SignIn = (props) => {
     const [creds, setCreds] = useState({ userName: "", password: "" });
     const usernameFieldRef = useRef();
     const passwordFieldRef = useRef();
@@ -39,6 +39,8 @@ const SignIn = () => {
             .catch(err => {
                 console.log('LOGIN FAILED', err.response); // There was an error creating the data and logs to console
             });
+
+        props.history.push('/loginform');
     }
 
 
