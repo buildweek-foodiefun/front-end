@@ -52,12 +52,12 @@ const App = () => {
     axiosWithAuth().put(`https://foodiefun-api.herokuapp.com/api/reviews/${editedReview.id}`, editedReview)
       .then(res => {
         console.log(res.data);
-      //   // For the page.
+        // For the page.
         const reviewsCopy = [...reviews];
         const oldReview = reviewsCopy.find(review => review.id === editedReview.id);
         oldReview.restaurantName = editedReview.restaurantName;
         oldReview.restaurantType = editedReview.restaurantType;
-        oldReview.menuItem = editedReview.menuType;
+        oldReview.menuItem = editedReview.menuItem;
         oldReview.comments = editedReview.comments;
         oldReview.waitTime = editedReview.waitTime;
         oldReview.photoOfOrder = editedReview.photoOfOrder;

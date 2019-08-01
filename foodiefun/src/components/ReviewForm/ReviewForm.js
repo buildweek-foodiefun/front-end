@@ -21,6 +21,7 @@ const ReviewForm = props => {
   const handleChange = event => {
     setRestaurant({ ...restaurant, [event.target.name]: event.target.value });
   };
+
   const handleSubmit = event => {
     event.preventDefault();
     console.log(restaurant);
