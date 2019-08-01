@@ -19,10 +19,6 @@ const App = () => {
       .catch(err => console.log('you are not logged in', err))
   }, [])
 
-  // const addReview = (restaurant) => {
-  //   setReviews([...reviews, { ...restaurant}]);
-  // }
-
   const addReview = (restaurant) => {
     console.log('adding to server', restaurant);
     axiosWithAuth().post('https://foodiefun-api.herokuapp.com/api/reviews', restaurant)
@@ -31,22 +27,6 @@ const App = () => {
       })
       .catch(err => console.log('could not add item to server', err))
   };
-
-  // edit submit handler for editing functionality of the restaurant cards.
-  // const editReview = editedReview => {
-  //   const reviewsCopy = [...reviews];
-  //   const oldReview = reviewsCopy.find(review => review.id === editedReview.id);
-  //   oldReview.restaurantName = editedReview.restaurantName;
-  //   oldReview.restaurantType = editedReview.restaurantType;
-  //   oldReview.menuItem = editedReview.menuType;
-  //   oldReview.comments = editedReview.comments;
-  //   oldReview.waitTime = editedReview.waitTime;
-  //   oldReview.photoOfOrder = editedReview.photoOfOrder;
-  //   oldReview.price = editedReview.price;
-  //   oldReview.foodRating = editedReview.foodRating;
-  //   oldReview.dateOfVisit = editedReview.dateOfVisit;
-  //   setReviews(reviewsCopy);
-  // }
 
   const editReview = editedReview => {
     axiosWithAuth().put(`https://foodiefun-api.herokuapp.com/api/reviews/${editedReview.id}`, editedReview)
@@ -71,9 +51,6 @@ const App = () => {
         console.error('Can not edit message', err);
       })
   }
-
-  // Delete button functionality. Will need send this onClick function to 
-  // to userCard.js UserCard component: 
 
 	return (
 		<div className='App'>
