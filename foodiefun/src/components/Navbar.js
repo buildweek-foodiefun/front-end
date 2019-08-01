@@ -52,7 +52,7 @@ const Navbar = () => {
             <span className="icon-space">
                 <FontAwesomeIcon icon={faSignInAlt} />
               </span>
-              <Link to='/loginform'>SignIn/SignUp</Link>
+              <Link to='/loginform'>SignIn</Link>
             </a>
           </li>
           <li>
@@ -68,7 +68,7 @@ const Navbar = () => {
               <span className="icon-space">
                 <FontAwesomeIcon icon={faPhone} />
               </span>
-              Contact Us
+              <Link to='/signupform'>SignUp</Link>
             </a>
           </li>
           <li>
@@ -76,7 +76,7 @@ const Navbar = () => {
               <span className="icon-space">
                 <FontAwesomeIcon icon={faBookOpen} />
               </span>
-              Recipes
+              <Link to='/recipes'>Recipes</Link>
             </a>
           </li>
         </ul>

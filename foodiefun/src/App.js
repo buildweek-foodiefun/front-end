@@ -2,13 +2,14 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
-import Form from "./components/Form";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
 import UserInfo from "./components/userInfo";
 import mockarray from "./components/mockarray";
 import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
 import {axiosWithAuth} from './utils/auth';
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
@@ -55,7 +56,6 @@ const App = () => {
 	return (
 		<div className='App'>
       <Navbar />
-      {/* <Form /> */}
       {/* <RecipeApp /> */}
       
       {/* protected route code for ReviewForm */}
@@ -63,8 +63,13 @@ const App = () => {
         localStorage.getItem('token') ? <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> :
         <Redirect to='/loginform' />
       }
-      <Route path='/loginform' component={Form} />
       
+      {/* <SignUp /> */}
+      <Route path='/loginform' component={SignIn} />
+      <Route path='/signupform' component={SignUp} />
+      <Route path='/recipes' component={RecipeApp} />
+      {/* <ReviewForm /> */}
+      {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
       
       {/* protected route code for home (UserInfo) */}
