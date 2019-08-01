@@ -10,9 +10,6 @@ import mockarray from "./mockarray";
 
 export default class SearchSelect extends Component {
 
-
- 
-
   state = {
     dropdownSelection: []
   };
