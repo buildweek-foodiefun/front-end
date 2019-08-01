@@ -2,6 +2,8 @@ import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 import {Link} from 'react-router-dom';
 import {axiosWithAuth} from '../utils/auth'
+import "./userCard.css";
+
 
 function UserCard (props){
   // console.log("cardprops", props)
@@ -32,39 +34,45 @@ function UserCard (props){
         </Card.Header>
 
         <Card.Meta>
-          <span className='dateOfVisit'>Date Visited:  {props.tileData.dateOfVisit}</span>
+          <span className='dateOfVisit'><b>Date Visited: </b> {props.tileData.dateOfVisit}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='restaurantType'>Type of Food: {props.tileData.restaurantType}</span>
+          <span className='restaurantType'><b>Type of Food: </b>{props.tileData.restaurantType}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='waitTime'> Wait Time: {props.tileData.waitTime} minutes</span>
+          <span className='waitTime'><b>Wait Time: </b>{props.tileData.waitTime} minutes</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='menuItem'>Item Ordered: {props.tileData.menuItem}</span>
+          <span className='menuItem'><b>Item Ordered: </b>{props.tileData.menuItem}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='price'> Price: {props.tileData.price}</span>
+          <span className='price'><b>Price: $</b>{props.tileData.price}</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='foodRating'>Food rating: {props.tileData.foodRating} Stars</span>
+          <span className='foodRating'><b>Food rating: </b>{props.tileData.foodRating} Stars</span>
         </Card.Meta>
 
         <Card.Meta>
-          <span className='comments'>Comments: {props.tileData.comments}</span>
+          <span className='comments'><b>Comments: </b>{props.tileData.comments}</span>
         </Card.Meta>
 
       </Card.Content>
-      <button className='delete-btn' onClick={() => deleteReview(props.tileData)}>delete</button>
-      <Link to={`/edit/${props.tileData.id}`}><button className='edit-btn'>edit</button></Link>
+
+      
+     
+      <Link to={`/edit/${props.tileData.id}`}><button className='edit-btn'>Edit</button></Link>
+
+      <button className='delete-btn' onClick={() => deleteReview(props.tileData)}>Delete</button>
+
     </Card>
 
   )
 }
 
 export default UserCard;
+
