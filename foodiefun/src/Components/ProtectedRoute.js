@@ -5,10 +5,10 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
         render={props =>
-            localStorage.getItem("token") ? (
+            localStorage.getItem("foodidFunToken") ? (
                 <Component {...props} />
             ) : (
-                    <Redirect to="/" />
+                    <Redirect to="/loginform" />
                 )
         }
     />
