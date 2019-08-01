@@ -96,4 +96,146 @@ textarea{
   width: 33.33%;
 }
    */
-  
+
+   *,
+   :after,
+   :before {
+     box-sizing: border-box;
+   }
+   
+   a {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+   .new-login-wrap {
+     width: 100%;
+     margin: auto;
+     margin-top: 5em;
+     max-width: 525px;
+     min-height: 670px;
+     position: relative;
+     background: url(https://images.pexels.com/photos/2525682/pexels-photo-2525682.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+       no-repeat center;
+     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+       0 20px 50px 0 rgba(0, 0, 0, 0.19);
+   }
+   
+   .new-login-html {
+     width: 100%;
+     height: 100%;
+     max-width: 1000px;
+     padding: 90px 70px 50px 70px;
+     background: rgba(12, 12, 12, 0.2);
+   }
+   
+   .login-html .tab,
+   .login-form .group .label,
+   .login-form .group .button {
+     text-transform: uppercase;
+   }
+   
+   .login-html .sign-in:checked + .tab,
+   .login-html .sign-up:checked + .tab {
+     color: #fff;
+     border-color: #1161ee;
+   }
+   .login-form {
+     min-height: 345px;
+     position: relative;
+     perspective: 1000px;
+     transform-style: preserve-3d;
+   }
+   .login-form .group {
+     margin-bottom: 15px;
+   }
+   .login-form .group .label,
+   .login-form .group .input,
+   .login-form .group .button {
+     width: 100%;
+     color: #fff;
+     display: block;
+   }
+   .login-form .group .input,
+   .login-form .group .button {
+     border: 1px solid blue;
+     padding: 15px 20px;
+     border-radius: 25px;
+     background: rgba(83, 83, 83, 0.7);
+     font-size: 15px;
+   }
+   
+   .login-form .group .label {
+     color: #fff;
+     font-size: 15px;
+   }
+   .login-form .group .button {
+     background: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+   }
+   
+   .newTab {
+     color: white;
+     font-size: 24px;
+     cursor: pointer;
+     padding-bottom: 20px;
+   }
+   
+   .forgot {
+     color: #fff;
+   }
+   
+   .login-form .group label .icon {
+     width: 15px;
+     height: 15px;
+     border-radius: 2px;
+     position: relative;
+     display: inline-block;
+     background: rgba(7, 165, 238, 0.1);
+   }
+   .login-form .group label .icon:before,
+   .login-form .group label .icon:after {
+     content: "";
+     width: 10px;
+     height: 2px;
+     background: #fff;
+     position: absolute;
+     transition: all 0.2s ease-in-out 0s;
+   }
+   
+   .login-form .group .check:checked + label {
+     color: #fff;
+   }
+   .login-form .group .check:checked + label .icon {
+     background: #1161ee;
+   }
+   
+   .label {
+     color: #fff;
+   }
+   
+   .hr {
+     height: 2px;
+     margin: 60px 0 50px 0;
+     background: rgba(255, 255, 255, 0.2);
+   }
+   .foot-lnk {
+     text-align: center;
+   }
+   
+   @media (max-width: 600px) {
+     .login-wrap .login-form {
+       width: 100%;
+       float: none;
+     }
+     .login-wrap label {
+       margin: 10px 0;
+     }
+   }
+   
+   .numeric-group {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+   }
+   
