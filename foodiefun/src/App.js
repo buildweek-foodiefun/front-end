@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
 import {axiosWithAuth} from './utils/auth';
 
+import {ProtectedRoute} from './components/ProtectedRoute';
+
 const App = () => {
   const [reviews, setReviews] = useState([]);
 
@@ -57,13 +59,18 @@ const App = () => {
       <Navbar />
       {/* <Form /> */}
       {/* <RecipeApp /> */}
-      <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} />
+      {/* <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> */}
+      <ProtectedRoute path='/formreview' component={ReviewForm} addReview={addReview} />
       <Route path='/loginform' component={Form} />
       
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
 
-		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} setReviews={setReviews} />} />
+      {/* <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} setReviews={setReviews} />} /> */}
+      
+      <ProtectedRoute path='/' component={UserInfo} data={reviews} setReviews={setReviews} />
+
+      {/* <ProtectedRoute path='/formreview' component={ReviewForm} {...props} addReview={addReview} /> */}
       
 
       <Route path='/edit/:id' render={props => {
