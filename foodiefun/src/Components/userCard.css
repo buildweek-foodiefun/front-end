@@ -31,6 +31,7 @@
 .delete-btn{
     display: inline-block;
     margin: 0  auto !important;
+    margin-bottom: 0.5em !important;
     border-radius: none !important;
     width: 150px;
     border: none;

@@ -50,7 +50,7 @@ function UserCard (props){
         </Card.Meta>
 
         <Card.Meta>
-          <span className='price'><b>Price: </b>{props.tileData.price}</span>
+          <span className='price'><b>Price: $</b>{props.tileData.price}</span>
         </Card.Meta>
 
         <Card.Meta>
