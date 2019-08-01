@@ -1,0 +1,52 @@
+.header{
+    margin-bottom: 0.5em;
+    font-size: 2em;
+}
+
+.content.header:not(.ui){
+    font-size: 1.5em !important;
+}
+
+.edit-btn{
+    display:inline-block;
+    width: 150px;
+    padding:0.3em 1.2em;
+    margin:0 0 0.3em 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.edit-btn:hover{
+    background-color:#4095c6;
+}
+
+
+.delete-btn{
+    display: inline-block;
+    margin: 0  auto !important;
+    border-radius: none !important;
+    width: 150px;
+    border: none;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#ff8080;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover{
+    background-color:#ff4d4d;
+}
+
