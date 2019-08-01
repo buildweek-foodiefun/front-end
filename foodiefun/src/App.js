@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Link} from 'react-router-dom';
-
+import axios from 'axios'
 import Form from "./components/Form";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
 import UserInfo from "./components/userInfo";
@@ -57,12 +57,15 @@ const App = () => {
       <Navbar />
       {/* <Form /> */}
       {/* <RecipeApp /> */}
-			{/* <Form />  */}
       <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} />
       <Route path='/loginform' component={Form} />
+      
       {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
+
 		  <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} setReviews={setReviews} />} />
+      
+
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);

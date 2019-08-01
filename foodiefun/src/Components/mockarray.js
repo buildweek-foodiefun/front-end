@@ -1,3 +1,7 @@
+//Important:
+//price, waitTime and foodRating are integers, not strings. The database needs to receive every field in its correct format
+//Also, the date, is a string as you are doing, but the format is ‘YYYY-MM-DD’
+
 const mockarray = [
     {id: '3',
     restaurantName: 'Mcdonalds',
@@ -6,7 +10,7 @@ const mockarray = [
     comments: 'Greasy american classic!',
     waitTime: '5',
     photoOfOrder: 'https://2.bp.blogspot.com/-mVo2J0TfPKs/Uqo1ccZo9sI/AAAAAAAAZ0s/qPKvVRvk6SY/s1600/mcdonalds-bacon-mcdouble-02.JPG',
-    price: '$1.39',
+    price: '2',
     foodRating: '3',
     dateOfVisit: '7/29/2019'},
 
