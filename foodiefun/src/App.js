@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import {Route, Link} from 'react-router-dom';
+import {Route, Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
 import Form from "./components/Form";
 import ReviewForm from "./components/ReviewForm/ReviewForm";
@@ -9,8 +9,6 @@ import mockarray from "./components/mockarray";
 import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
 import {axiosWithAuth} from './utils/auth';
-
-import {ProtectedRoute} from './components/ProtectedRoute';
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
@@ -59,20 +57,22 @@ const App = () => {
       <Navbar />
       {/* <Form /> */}
       {/* <RecipeApp /> */}
-      {/* <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> */}
-      <ProtectedRoute path='/formreview' component={ReviewForm} addReview={addReview} />
+      
+      {/* protected route code for ReviewForm */}
+      {
+        localStorage.getItem('token') ? <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> :
+        <Redirect to='/loginform' />
+      }
       <Route path='/loginform' component={Form} />
       
-      {/* <ReviewForm addReview={addReview} /> */}
       {console.log(reviews)}
-
-      {/* <Route exact path='/' render={props => <UserInfo {...props} data = {reviews} setReviews={setReviews} />} /> */}
       
-      <ProtectedRoute path='/' component={UserInfo} data={reviews} setReviews={setReviews} />
-
-      {/* <ProtectedRoute path='/formreview' component={ReviewForm} {...props} addReview={addReview} /> */}
+      {/* protected route code for home (UserInfo) */}
+      {
+        localStorage.getItem('token') ? <Route exact path='/' render={props => <UserInfo {...props} data={reviews} setReviews={setReviews} />} /> :
+        <Redirect to='/loginform' />
+      }
       
-
       <Route path='/edit/:id' render={props => {
                     const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
                     console.log(props.match);
