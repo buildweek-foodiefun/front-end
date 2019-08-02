@@ -1,6 +1,4 @@
-body {
-    margin:  0;
-}
+
 
 .page-content {
 	width: 100%;
@@ -130,6 +128,10 @@ input:-ms-input-placeholder {
 input:-moz-placeholder { 
   color: #666;
   font-size: 16px;
+}
+
+.btn {
+	background: blue:
 }
 
 /* Responsive */

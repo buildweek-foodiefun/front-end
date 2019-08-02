@@ -1,11 +1,10 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
-import {Link} from 'react-router-dom';
-import {axiosWithAuth} from '../utils/auth'
-import "./userCard.css";
+import { Link } from 'react-router-dom';
+import { axiosWithAuth } from '../utils/auth'
+import "./userInfo.css"
 
-
-function UserCard (props){
+function UserCard(props) {
   // console.log("cardprops", props)
   const { setReviews } = props;
   // const deleteReview = data => {
@@ -23,14 +22,19 @@ function UserCard (props){
       })
   }
 
-  return(
+  return (
 
     <Card>
-      <Image className= 'photoOfOrder' src={props.tileData.photoOfOrder} wrapped ui={false} />
-      
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+      </div>
+
+      <script src="js/addons/rating.js"></script>
+      <Image className='photoOfOrder' src={props.tileData.photoOfOrder} wrapped ui={false} />
+
       <Card.Content>
-        <Card.Header 
-          className= 'restaurantName'>{props.tileData.restaurantName}
+        <Card.Header
+          className='restaurantName'>{props.tileData.restaurantName}
         </Card.Header>
 
         <Card.Meta>
