@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
-import ReviewForm from "./Components/ReviewForm/ReviewForm";
+import ReviewForm from "./components/ReviewForm/ReviewForm";
 import UserInfo from "./Components/userInfo";
 import mockarray from "./Components/mockarray";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
 import {axiosWithAuth} from './utils/auth';
 import SignUp from "./Components/SignUp";
