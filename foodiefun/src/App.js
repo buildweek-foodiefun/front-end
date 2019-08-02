@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import './App.css';
-import { Route, Link, Redirect } from 'react-router-dom';
+import {Route, Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
-import ReviewForm from "./components/ReviewForm/ReviewForm";
-import UserInfo from "./components/userInfo";
-import mockarray from "./components/mockarray";
-import Navbar from "./components/Navbar";
+import ReviewForm from "./newComponents/ReviewForm/ReviewForm";
+import UserInfo from "./newComponents/userInfo";
+import mockarray from "./newComponents/mockarray";
+import Navbar from "./newComponents/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
-import { axiosWithAuth } from './utils/auth';
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
+import {axiosWithAuth} from './utils/auth';
+import SignUp from "./newComponents/SignUp";
+import SignIn from "./newComponents/SignIn";
 import Footer from './Footer';
 
 
