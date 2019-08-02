@@ -1,0 +1,23 @@
+.mainFooter {
+  width: 100%;
+  background: navy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-variant: small-caps;
+  font-family: Georgia;
+  color: #fff;
+  margin-bottom: -10%
+}
+.mainFooter p {
+  padding: 5px;
+}
+
+@media (max-width: 500px) {
+  .mainFooter {
+    background-color: orange;
+  }
+  .mainFooter p {
+    font-size: 14px;
+  }
+}

@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './FormStyles.css';
+import faker from 'faker';
 
 const ReviewForm = props => {
   const { addReview, initialCard } = props;
@@ -52,7 +53,12 @@ const ReviewForm = props => {
     "Indian",
     "Soul Food",
     "Thai",
-    "Mediterranean"
+    "Mediterranean",
+    "Vietnamese",
+    "Sushi",
+    "Spanish",
+    "Jamaican"
+
   ];
 
   return (
@@ -203,7 +209,7 @@ const ReviewForm = props => {
                   Photo of Order
                 </label>
                 <input
-                  value={restaurant.photoOfOrder}
+                  value={faker.image.food()}
                   name="photoOfOrder"
                   className="form-control"
                   placeholder="photo of order"
@@ -238,7 +244,7 @@ const ReviewForm = props => {
 //                                                 price: '', 
 //                                                 foodRating: '', 
 //                                                 dateOfVisit: ''});
-    
+
 //     const handleChange = event => {
 //         setRestaurant({...restaurant, [event.target.name]: event.target.value})
 //     }
@@ -266,7 +272,7 @@ const ReviewForm = props => {
 //       <form onSubmit={handleSubmit}>
 //         <fieldset>
 //           <legend>Rate the Food</legend>
-          
+
 //           <div className="form-group row">
 //             <div className="column">
 //             <label for="Restaurant Name" className="col-sm-2 col-form-label">
@@ -282,7 +288,7 @@ const ReviewForm = props => {
 //               />
 //               </div>
 //             </div>
-        
+
 //           <div className="form-group row">
 //             <div className="coumn">
 //               <label for="Restaurant Type" className="col-sm-2 col-form-label">
@@ -411,7 +417,7 @@ const ReviewForm = props => {
 //           <button type="submit" className="btn btn-primary">
 //             Submit
 //           </button>
-          
+
 //           </div>
 //           </div>
 //         </fieldset>

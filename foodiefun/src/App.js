@@ -1,18 +1,23 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import "bootstrap/dist/css/bootstrap.css";
 import './App.css';
-import {Route, Link, Redirect} from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import axios from 'axios'
 import ReviewForm from "./components/ReviewForm/ReviewForm";
 import UserInfo from "./components/userInfo";
 import mockarray from "./components/mockarray";
 import Navbar from "./components/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
-import {axiosWithAuth} from './utils/auth';
+import { axiosWithAuth } from './utils/auth';
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import Footer from './Footer';
+
+
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
+
 
   useEffect(() => {
     axiosWithAuth().get('https://foodiefun-api.herokuapp.com/api/reviews')
@@ -24,7 +29,7 @@ const App = () => {
     console.log('adding to server', restaurant);
     axiosWithAuth().post('https://foodiefun-api.herokuapp.com/api/reviews', restaurant)
       .then(res => {
-        setReviews([...reviews, {...res.data}]);
+        setReviews([...reviews, { ...res.data }]);
       })
       .catch(err => console.log('could not add item to server', err))
   };
@@ -47,15 +52,16 @@ const App = () => {
         oldReview.dateOfVisit = editedReview.dateOfVisit;
         setReviews(reviewsCopy);
       })
-      
+
       .catch(err => {
         console.error('Can not edit message', err);
       })
   }
 
-	return (
-		<div className='App'>
+  return (
+    <div className='App'>
       <Navbar />
+
       {/* <RecipeApp /> */}
       
       {/* <SignUp /> */}
@@ -64,34 +70,32 @@ const App = () => {
       <Route path='/recipes' component={RecipeApp} />
       {/* <ReviewForm /> */}
       {/* <ReviewForm addReview={addReview} /> */}
+
+
       {console.log(reviews)}
-      
+
       {/* protected route code for home (UserInfo) */}
-      {/* {
-        localStorage.getItem('token') ? <Route path='/' render={props => <UserInfo {...props} data={reviews} setReviews={setReviews} />} /> : <Redirect to='/signupform' />
-      } */}
       
-        <Route exact path='/' render={props => {
-                return localStorage.getItem('token') ? <UserInfo {...props} data={reviews} setReviews={setReviews} /> : <Redirect to='/loginform' />
-        }} /> 
-
-      {/* protected route code for ReviewForm */}
-      
-      {/* {
-        localStorage.getItem('token') ? <Route path='/formreview' render={props => <ReviewForm {...props} addReview={addReview} />} /> : <Redirect to='/signupform' />
-      } */}
-
       <Route exact path='/formreview' render={props => {
                       return localStorage.getItem('token') ? <ReviewForm {...props} addReview={addReview} /> : <Redirect to='/loginform' />
-              }} /> 
-      
+              }} />
+
+      {/* protected route code for ReviewForm */}
+      <Route exact path='/' render={props => {
+                return localStorage.getItem('token') ? <UserInfo {...props} data={reviews} setReviews={setReviews} /> : <Redirect to='/loginform' />
+        }} />
+
+
       <Route path='/edit/:id' render={props => {
-                    const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
-                    console.log(props.match);
-                    return <ReviewForm {...props} initialCard={targetedReview} addReview={editReview} />;  
-                  }}/>
-		</div>
-	)
+        const targetedReview = reviews.find(review => review.id.toString() === props.match.params.id);
+        console.log(props.match);
+        return <ReviewForm {...props} initialCard={targetedReview} addReview={editReview} />;
+
+      }} />
+    </div>
+  )
 };
+
+
 
 export default App;

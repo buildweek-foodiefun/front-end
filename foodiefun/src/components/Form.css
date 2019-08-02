@@ -1,7 +1,4 @@
-body {
-    margin:  0;
-    background: url("http://www.seekgif.com/uploads/blackboard-texture-background-11.jpg");
-}
+
 
 .page-content {
 	width: 100%;
@@ -131,6 +128,10 @@ input:-ms-input-placeholder {
 input:-moz-placeholder { 
   color: #666;
   font-size: 16px;
+}
+
+.btn {
+	background: blue:
 }
 
 /* Responsive */
