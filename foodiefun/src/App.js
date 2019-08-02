@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import {Route, Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
-import ReviewForm from "./components/ReviewForm/ReviewForm";
-import UserInfo from "./Components/userInfo";
-import mockarray from "./Components/mockarray";
-import Navbar from "./components/Navbar";
+import ReviewForm from "./newComponents/ReviewForm/ReviewForm";
+import UserInfo from "./newComponents/userInfo";
+import mockarray from "./newComponents/mockarray";
+import Navbar from "./newComponents/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
 import {axiosWithAuth} from './utils/auth';
-import SignUp from "./Components/SignUp";
-import SignIn from "./Components/SignIn";
+import SignUp from "./newComponents/SignUp";
+import SignIn from "./newComponents/SignIn";
 
 const App = () => {
   const [reviews, setReviews] = useState([]);
