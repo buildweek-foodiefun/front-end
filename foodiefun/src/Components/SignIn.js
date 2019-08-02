@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import swal from "sweetalert";
 import "./SignUp.css";
-import image from './img/signup.jpg'
+import image from './img/form-img.jpg'
 
 
 
@@ -46,7 +46,7 @@ const SignIn = () => {
     <div class="page-content">
       <div class="form-v6-content">
         <div class="form-left">
-          <img className="form-image" style={{ linearGradient: "red, blue", opacity: ".6" }} src={image} alt="form" />
+          <img className="form-image" style={{ background: "linear-gradient: to right, #c33764, #1d2671", opacity: ".8", height: "500px" }} src={image} alt="form" />
         </div>
         <form
           onSubmit={handleSubmit}
@@ -77,19 +77,11 @@ const SignIn = () => {
               placeholder="Password"
               required />
           </div>
-          <div class="form-row">
-            <input
-              type="password"
-              name="comfirm-password"
-              id="comfirm-password"
-              class="input-text"
-              placeholder="Comfirm Password"
-              required />
-          </div>
           <div class="form-row-last">
-            <input type="submit"
+            <input 
+              className="btn" 
+              type="submit"
               name="signin"
-              class="signin"
               value="Sign In" />
           </div>
         </form>

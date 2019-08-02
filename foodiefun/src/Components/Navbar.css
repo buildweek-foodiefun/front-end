@@ -10,22 +10,27 @@ header {
 }
 
 a {
-    background: transparent;
+    /* background: transparent; */
     margin: 0;
     padding: 0;
     font-size: 100%;
-    vertical-align: baseline;
+    vertical-align: center;
     text-decoration: none;
 }
 
 nav {
     max-width: 1180px;
-		height: 80px;
+		height: 90px;
     margin: 0px auto;
     display: -webkit-flex;
     display: flex;
 		-ms-align-items: center;
     align-items: center;
+}
+
+.hero {
+    height: 30em;
+    background: #ffc0cb;
 }
 
 .top-nav {
@@ -40,24 +45,28 @@ nav {
      background: linear-gradient(to left, #800080, #ffc0cb);
 }
 
-h1 {
-		color: #fff;
-    margin-left: 10px;
-    margin-right: auto;
-		font-size: 24px;
-		font-family: 'Rock Salt', cursive;
+.nav {
+    display: inline-block;
+    margin-left: -90px;
 }
 
 ul {
 		display: -webkit-flex;
 		display: flex;
     list-style: none;
+    align-content: space-between;
+    margin-top: 15px;
+    font-size: 1.1em;
 }
 
 ul li a {
-    color: #fff;
-    margin: 0px 10px;
+    color: #d22fef;
+    font-size: 1.5em;
+    font-family: 'Amaranth', sans-serif;
+    margin: 0 0 -30px 20px;
+    
     padding: 10px;
+    padding-top: 350px;
     border-radius: 5px;
 }
 
@@ -75,7 +84,7 @@ ul li a {
 }
 
 .nav__icon span {
-    background: rgba(255, 255, 255, 1);
+    background: rgb(230, 12, 12);
     position: absolute;
     left: 0;
     width: 100%;
@@ -134,13 +143,13 @@ ul li a {
         text-align: center;
     }
     ul li a {
-				display: block;
-        background: transparent;
+		display: block;
+        /* background: transparent; */
         margin: 0px;
         padding: 20px;
     }
     ul li a:hover {
-        color: #000;
+        color: #e71111;
         background: #fff;
     }
     .nav__icon,
@@ -150,4 +159,119 @@ ul li a {
         box-sizing: border-box;
         z-index: 999;
     }
+}
+
+.hero {
+width: 100%;
+height: 25em;
+min-width: 100%;
+min-height: 100%;
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+
+background-size: cover;
+}
+
+#color-overlay {
+    width: 100%;
+    height: 25em;
+   position: absolute;
+       background: linear-gradient(to right, #ff6e7f, #bfe9ff); 
+   opacity: 0.4;
+}
+
+.flex-center {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+}
+
+
+.hero-message {
+    margin-top: 5em;
+    position: relative;
+color: #b19cd9;
+text-shadow: #343a40 2px 2px;
+
+min-width: 100%;
+min-height: 12em;
+position: relative;
+}
+
+.hero-message::before {
+margin-left: 25%;
+min-width: 50%;
+min-height: 12em;
+}
+
+.hero-sub-title {
+font-family: 'Amaranth', cursive;
+color: hotpink !important;
+}
+
+
+.hero-title,
+.hero-sub-title {
+width: 100%;
+
+text-align: center;
+}
+
+.hero-title {
+margin: .5% 0;
+font-size: 6em;
+font-family: 'Lacquer', cursive;
+}
+
+
+@media (min-width: 320px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+}
+}
+
+@media (min-width: 460px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+}
+}
+
+@media (min-width: 720px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+}
+}
+
+@media (min-width: 980px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+}
+}
+
+@media (min-width: 1240px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+
+}
+}
+
+@media (min-width: 1500px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+}
+}
+
+@media (min-width: 1760px) {
+.hero::before {
+background-image: url("http://www.sclance.com/backgrounds/food-background-images/food-background-images_979635.png");
+}
+}
+
+
+
+@media(min-width:720px) {
+.hero-message {
+min-width: 50%;
+min-height: 12em;
+}
 }

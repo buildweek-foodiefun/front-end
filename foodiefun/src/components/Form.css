@@ -130,6 +130,10 @@ input:-moz-placeholder {
   font-size: 16px;
 }
 
+.btn {
+	background: blue:
+}
+
 /* Responsive */
 @media screen and (max-width: 991px) {
 	.form-v6-content {

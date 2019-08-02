@@ -74,7 +74,8 @@ const App = () => {
       <Route path='/recipes' component={RecipeApp} />
       {/* <ReviewForm /> */}
       {/* <ReviewForm addReview={addReview} /> */}
-      <Footer />
+
+
       {console.log(reviews)}
 
       {/* protected route code for home (UserInfo) */}
