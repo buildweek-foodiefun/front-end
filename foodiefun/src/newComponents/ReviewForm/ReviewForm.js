@@ -15,7 +15,8 @@ const ReviewForm = props => {
       photoOfOrder: "",
       price: "",
       foodRating: "",
-      dateOfVisit: ""
+      dateOfVisit: "",
+      photoOfOrder: ''
     }
   );
 
@@ -36,7 +37,8 @@ const ReviewForm = props => {
       photoOfOrder: "",
       price: "",
       foodRating: "",
-      dateOfVisit: ""
+      dateOfVisit: "",
+      photoOfOrder: ''
     });
 
     props.history.push('/');
@@ -209,7 +211,7 @@ const ReviewForm = props => {
                   Photo of Order
                 </label>
                 <input
-                  value={faker.image.food()}
+                  value={restaurant.photoOfOrder}
                   name="photoOfOrder"
                   className="form-control"
                   placeholder="photo of order"
