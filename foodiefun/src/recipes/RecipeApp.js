@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { recipe } from './Recipe'
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
 import { recipes } from "./tempList";

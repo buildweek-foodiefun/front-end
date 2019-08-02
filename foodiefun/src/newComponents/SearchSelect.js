@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Segment, Dropdown } from "semantic-ui-react";
+import { Dropdown } from "semantic-ui-react";
 
-import mockarray from "./mockarray";
 
 
 
@@ -29,7 +28,7 @@ export default class SearchSelect extends Component {
         key: restaurant.restaurantType,
         text: restaurant.restaurantType,
         value: restaurant.restaurantType
-     })
+      })
     );
 
     return (
@@ -44,7 +43,7 @@ export default class SearchSelect extends Component {
         value={this.state.dropdownSelection}
       />
 
-      
+
     );
   }
 }

@@ -4,7 +4,7 @@ import SearchSelect from './SearchSelect'
 import "./userInfo.css";
 
 
-export default class  userInfo extends Component{
+export default class userInfo extends Component {
   constructor(props) {
     super(props);
     this.state = { selectedFilterThingies: [] }
@@ -18,61 +18,61 @@ export default class  userInfo extends Component{
 
   // ["Fast Food", "Japanese", "Mexican" ]
 
-  render(){
+  render() {
 
     //console.log("updatehandler", {this.searchSelectHandler})
 
-    if (!this.props.data){
+    if (!this.props.data) {
       return <div>Loading Foodie Cards...</div>
     }
-    
-    else{
+
+    else {
 
 
-      if (this.state.selectedFilterThingies.length < 1){
-        return <section className = 'userCard '>
+      if (this.state.selectedFilterThingies.length < 1) {
+        return <section className='userCard '>
           <div>
 
             <div>
-              <SearchSelect updateHandler={this.searchSelectHandler} data = {this.props.data} />
-      
+              <SearchSelect updateHandler={this.searchSelectHandler} data={this.props.data} />
+
             </div>
 
-            <div class = 'gridview' >
+            <div className='gridview' >
               {this.props.data.map(oneRest => (
-                <UserCard class = 'onecard' tileData={oneRest} setReviews={this.props.setReviews} />
+                <UserCard className='onecard' tileData={oneRest} setReviews={this.props.setReviews} />
               ))}
             </div>
-            
+
 
           </div>
         </section>
       }
-    
-    
-      else{
+
+
+      else {
         let newarray = []
 
         //check for restuarant type and render from newarray
-        newarray = (this.props.data.filter(item => 
+        newarray = (this.props.data.filter(item =>
           this.state.selectedFilterThingies.some(filter => filter === item.restaurantType)))
 
-          console.log("newarray",newarray)
+        console.log("newarray", newarray)
 
 
-        return <section className = 'userCard '>
+        return <section className='userCard '>
           <div>
 
             <div>
-              <SearchSelect updateHandler={this.searchSelectHandler} data = {this.props.data} />
+              <SearchSelect updateHandler={this.searchSelectHandler} data={this.props.data} />
             </div>
 
-            <div class = 'gridview'>
+            <div className='gridview'>
               {newarray.map(oneRest => (
-                <UserCard class = 'onecard' tileData={oneRest} setReviews={this.props.setReviews} />
-               ))}
+                <UserCard className='onecard' tileData={oneRest} setReviews={this.props.setReviews} />
+              ))}
             </div>
-            
+
 
           </div>
         </section>
@@ -83,34 +83,3 @@ export default class  userInfo extends Component{
     }
   }
 }
-
-
-
-// // ( example value -is and array 
-//     ["Fast Food", "Japanese", "Mexican" ])
-
-
-
-
-
-
-
-
-/*
-OLDDDDD
- {this.props.data.map(oneRest => (
-            <UserCard tileData={oneRest} setReviews={this.props.setReviews} />
-          ))}
-
-
-
-else{
-  for each item in value, 
-      newarray= this.props.data.filter(item => this.props.data.restuarantType === item)
-
-      {newarray((oneRest) =>
-      <UserCard tileData = {oneRest}/>
-)}
-}
-
-*/
