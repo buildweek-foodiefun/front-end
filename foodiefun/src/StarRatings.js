@@ -7,3 +7,4 @@ class StarRatings extends Component {
             rating: newRating
         });
     }
+}
