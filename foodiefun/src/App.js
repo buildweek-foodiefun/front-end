@@ -1,17 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import './App.css';
-import {Route, Link, Redirect} from 'react-router-dom';
-import axios from 'axios'
+import { Route, Redirect } from 'react-router-dom';
 import ReviewForm from "./newComponents/ReviewForm/ReviewForm";
 import UserInfo from "./newComponents/userInfo";
-import mockarray from "./newComponents/mockarray";
 import Navbar from "./newComponents/Navbar";
 import RecipeApp from "./recipes/RecipeApp";
-import {axiosWithAuth} from './utils/auth';
+import { axiosWithAuth } from './utils/auth';
 import SignUp from "./newComponents/SignUp";
 import SignIn from "./newComponents/SignIn";
-import Footer from './Footer';
+
 
 
 
@@ -63,7 +61,7 @@ const App = () => {
       <Navbar />
 
       {/* <RecipeApp /> */}
-      
+
       {/* <SignUp /> */}
       <Route path='/loginform' component={SignIn} />
       <Route path='/signupform' component={SignUp} />
@@ -75,15 +73,15 @@ const App = () => {
       {console.log(reviews)}
 
       {/* protected route code for home (UserInfo) */}
-      
+
       <Route exact path='/formreview' render={props => {
-                      return localStorage.getItem('token') ? <ReviewForm {...props} addReview={addReview} /> : <Redirect to='/loginform' />
-              }} />
+        return localStorage.getItem('token') ? <ReviewForm {...props} addReview={addReview} /> : <Redirect to='/loginform' />
+      }} />
 
       {/* protected route code for ReviewForm */}
       <Route exact path='/' render={props => {
-                return localStorage.getItem('token') ? <UserInfo {...props} data={reviews} setReviews={setReviews} /> : <Redirect to='/loginform' />
-        }} />
+        return localStorage.getItem('token') ? <UserInfo {...props} data={reviews} setReviews={setReviews} /> : <Redirect to='/loginform' />
+      }} />
 
 
       <Route path='/edit/:id' render={props => {

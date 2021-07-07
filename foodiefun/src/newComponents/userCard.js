@@ -1,8 +1,9 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/auth'
 import "./userInfo.css"
+
 
 function UserCard(props) {
   // console.log("cardprops", props)
@@ -22,14 +23,16 @@ function UserCard(props) {
       })
   }
 
+
+
+
+
   return (
 
     <Card>
-      <div class="rating">
+      <div className="rating">
         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       </div>
-
-      <script src="js/addons/rating.js"></script>
       <Image className='photoOfOrder' src={props.tileData.photoOfOrder} wrapped ui={false} />
 
       <Card.Content>
@@ -67,16 +70,21 @@ function UserCard(props) {
 
       </Card.Content>
 
-      
-     
-      <Link to={`/edit/${props.tileData.id}`}><button className='edit-btn'>Edit</button></Link>
 
-      <button className='delete-btn' onClick={() => deleteReview(props.tileData)}>Delete</button>
 
-    </Card>
+      <Link to={`/edit/${props.tileData.id}`}>
+        <button className='edit-btn btn btn-bubble'>
+          Edit
+        </button></Link>
+
+      <button className='delete-btn btn2 btn-bubble2'
+        onClick={() => deleteReview(props.tileData)}>
+        Delete
+        </button>
+
+    </Card >
 
   )
 }
 
 export default UserCard;
-

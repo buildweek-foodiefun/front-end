@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import image from "./img/foodiefun-logo-long.png";
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
           <li><Link to="/signupform">SIGN UP</Link></li>
           <li><Link to="/formreview">ADD REVIEW</Link></li>
         </ul>
-        <div class="nav__icon">
+        <div className="nav__icon">
           <span></span>
           <span></span>
           <span></span>

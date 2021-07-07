@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+
 .gridview{
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +25,7 @@
 .card:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    animation: shake 0.3s;
+    animation: shake .2s;
     animation-iteration-count: 1; 
 
 }
@@ -42,4 +53,102 @@
 .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
+}
+
+.edit-btn {
+  position:relative;
+  padding: 5px 10px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 15px;  
+  color: var(--text-color);
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px; 
+  z-index: 0;  
+  overflow: hidden; 
+}
+
+.btn-bubble {
+  color: white;
+  background-color: #b19cd9;
+  background-repeat: no-repeat;
+}
+.btn-bubble:hover, .btn-bubble:focus {
+  -webkit-animation: bubbles 1s forwards ease-out;
+          animation: bubbles 1s forwards ease-out;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) -2% 149% / 0.6em 0.6em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 56% 94% / 1.16em 1.16em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 26% 98% / 0.65em 0.65em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 63% 109% / 1.01em 1.01em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 56% 102% / 0.97em 0.97em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 3% 108% / 0.97em 0.97em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 23% 144% / 0.7em 0.7em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 91% 91% / 0.5em 0.5em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 96% 111% / 0.5em 0.5em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 21% 110% / 0.78em 0.78em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 92% 138% / 1.02em 1.02em;
+  background-color: #b19cd9;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes bubbles {
+  100% {
+    background-position: -5% -303%, 62% -78%, 21% -368%, 68% -5%, 65% -341%, 8% -43%, 27% -287%, 85% -244%, 97% -7%, 18% -310%, 82% -246%;
+    box-shadow: inset 0 -6.5em 0 #ff69b4;
+  }
+}
+
+@keyframes bubbles {
+  100% {
+    background-position: -5% -303%, 62% -78%, 21% -368%, 68% -5%, 65% -341%, 8% -43%, 27% -287%, 85% -244%, 97% -7%, 18% -310%, 82% -246%;
+    box-shadow: inset 0 -6.5em 0 #ff69b4;
+  }
+}
+
+.delete-btn {
+  position:relative;
+  padding: 5px 10px;
+  border-radius: 10px; 
+  margin-right: 15px;  
+  background: none;
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 15px;  
+  color: var(--text-color);
+  margin-bottom: 10px;
+  margin-left: 69px;
+  margin-top: 10px;
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 12px 12px 22px;
+  z-index: 0;  
+  
+}
+
+.btn-bubble2 {
+  color: white;
+  background-color: #ff69b4;
+  background-repeat: no-repeat;
+}
+.btn-bubble2:hover, .btn-bubble:focus {
+  -webkit-animation: bubbles 1s forwards ease-out;
+          animation: bubbles 1s forwards ease-out;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) -2% 149% / 0.6em 0.6em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 56% 94% / 1.16em 1.16em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 26% 98% / 0.65em 0.65em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 63% 109% / 1.01em 1.01em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 56% 102% / 0.97em 0.97em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 3% 108% / 0.97em 0.97em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 23% 144% / 0.7em 0.7em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 91% 91% / 0.5em 0.5em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 96% 111% / 0.5em 0.5em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 21% 110% / 0.78em 0.78em, radial-gradient(circle at center, rgba(0, 0, 0, 0) 30%, #eeeeff 60%, #eeeeff 65%, rgba(0, 0, 0, 0) 70%) 92% 138% / 1.02em 1.02em;
+  background-color: #b19cd9;
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes bubbles {
+  100% {
+    background-position: -5% -303%, 62% -78%, 21% -368%, 68% -5%, 65% -341%, 8% -43%, 27% -287%, 85% -244%, 97% -7%, 18% -310%, 82% -246%;
+    box-shadow: inset 0 -6.5em 0 #b19cd9;
+  }
+}
+
+@keyframes bubbles {
+  100% {
+    background-position: -5% -303%, 62% -78%, 21% -368%, 68% -5%, 65% -341%, 8% -43%, 27% -287%, 85% -244%, 97% -7%, 18% -310%, 82% -246%;
+    box-shadow: inset 0 -6.5em 0 #ff69b4;
+  }
 }

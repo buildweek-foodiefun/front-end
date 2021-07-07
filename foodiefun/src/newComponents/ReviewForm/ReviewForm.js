@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './FormStyles.css';
-import faker from 'faker';
+
 
 const ReviewForm = props => {
   const { addReview, initialCard } = props;
@@ -15,8 +15,8 @@ const ReviewForm = props => {
       photoOfOrder: "",
       price: "",
       foodRating: "",
-      dateOfVisit: "",
-      photoOfOrder: ''
+      dateOfVisit: ""
+
     }
   );
 
@@ -28,18 +28,18 @@ const ReviewForm = props => {
     event.preventDefault();
     console.log(restaurant);
     addReview(restaurant);
-    setRestaurant({
-      restaurantName: "",
-      restaurantType: "",
-      menuItem: "",
-      comments: "",
-      waitTime: "",
-      photoOfOrder: "",
-      price: "",
-      foodRating: "",
-      dateOfVisit: "",
-      photoOfOrder: ''
-    });
+    // setRestaurant({
+    //   restaurantName: "",
+    //   restaurantType: "",
+    //   menuItem: "",
+    //   comments: "",
+    //   waitTime: "",
+    //   photoOfOrder: "",
+    //   price: "",
+    //   foodRating: "",
+    //   dateOfVisit: "",
+    //   photoOfOrder: ''
+    // });
 
     props.history.push('/');
   };
@@ -92,11 +92,13 @@ const ReviewForm = props => {
                   name="food-types"
                   type="text"
                   value={restaurant.restaurantType}
+                  // eslint-disable-next-line
                   name="restaurantType"
                   className="form-control"
                   id="restaurantType"
                   placeholder="Other Types"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   className="input"
                 >
                   {/* <option value="vegetarian">Vegetarian</option> */}
@@ -120,6 +122,7 @@ const ReviewForm = props => {
                   className="form-control"
                   id="menuItem"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   className="input"
                 />
               </div>
@@ -136,6 +139,7 @@ const ReviewForm = props => {
                   onChange={handleChange}
                   rows="6"
                   cols="33"
+                  // eslint-disable-next-line
                   className="input"
                 />
               </div>
@@ -151,6 +155,7 @@ const ReviewForm = props => {
                     className="form-control"
                     placeholder="Wait Time"
                     onChange={handleChange}
+                    // eslint-disable-next-line
                     className="input"
                     step="5"
                     min="0"
@@ -184,6 +189,7 @@ const ReviewForm = props => {
                     className="form-control"
                     placeholder="Price"
                     onChange={handleChange}
+                    // eslint-disable-next-line
                     className="input"
                     step="2"
                     min="3"
@@ -201,6 +207,7 @@ const ReviewForm = props => {
                     className="form-control"
                     placeholder="Date of Visit"
                     onChange={handleChange}
+                    // eslint-disable-next-line
                     className="input"
                     style={{ width: 200 }}
                   />
@@ -217,6 +224,7 @@ const ReviewForm = props => {
                   placeholder="photo of order"
                   onChange={handleChange}
                   type="text"
+                  // eslint-disable-next-line
                   className="input"
                 />
               </div>
